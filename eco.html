@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Eco Rush</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+  :root{
+    --bg-1: #0e605a;
+    --bg-2: #579aab;
+    --panel: rgba(255,255,255,0.85);
+    --accent: #1e9a6a;
+    --danger: #c94a3f;
+    --muted: #556068;
+    --glass: rgba(255,255,255,0.6);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    min-height:100vh;
+    background: radial-gradient(1200px 600px at 10% 10%, rgba(30,154,106,0.06), transparent),
+                linear-gradient(180deg,var(--bg-1),var(--bg-2));
+    color:#0b2b1f;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+
+  .app{
+    width:100%;
+    max-width:1200px;
+    display:grid;
+    grid-template-columns: 460px 1fr;
+    gap:22px;
+    align-items:start;
+  }
+  @media(max-width:980px){ .app{ grid-template-columns:1fr; padding-bottom:40px } }
+
+  .earth-panel{
+    background: var(--panel);
+    border-radius:20px;
+    padding:18px;
+    box-shadow: 0 12px 40px rgba(13,30,20,0.12);
+    position:relative;
+    overflow:hidden;
+  }
+  .top-row{ display:flex; align-items:center; justify-content:space-between; gap:10px }
+  .title{ font-weight:800; font-size:18px; }
+  .label-chip{ background:rgba(255, 255, 255, 0.5); padding:8px 12px; border-radius:14px; font-weight:700; box-shadow: inset 0 -3px 0 rgba(0,0,0,0.04) }
+
+  .earth-wrap{ display:flex; flex-direction:column; align-items:center; gap:12px; margin-top:12px; }
+  .earth-svg{
+    width:340px; height:340px; border-radius:999px; position:relative; transition: transform .45s ease;
+    filter: drop-shadow(0 12px 30px rgba(10,30,18,0.12));
+  }
+  .hud{
+    display:flex; gap:10px; align-items:center; justify-content:center; width:100%;
+  }
+  .health-card{ background:linear-gradient(180deg,#fff,#f8fff9); padding:10px 14px; border-radius:12px; box-shadow: 0 6px 18px rgba(10,30,18,0.06); min-width:180px; text-align:center }
+  .health-label{ font-weight:800; font-size:18px; }
+  .year-badge{ font-weight:700; color:var(--muted) }
+
+  .health-bar{
+    width:100%; height:12px; background: #e6f2eb; border-radius:999px; overflow:hidden; margin-top:8px;
+    border:1px solid rgba(0,0,0,0.04);
+  }
+  .health-fill{ height:100%; width:80%; transition: width .6s ease, background .4s ease; }
+
+  .leaf{
+    position:absolute; width:22px; height:22px; opacity:0; transition:opacity .6s, transform 1.2s;
+    pointer-events:none;
+  }
+
+  .sidebar{
+    background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
+    padding:16px; border-radius:20px; box-shadow: 0 12px 40px rgba(13,30,20,0.06);
+    display:flex; flex-direction:column; gap:12px;
+  }
+
+  .controls{ display:flex; gap:8px; justify-content:space-between; align-items:center }
+  .btn{
+    background:var(--accent); color:white; border:0; padding:10px 12px; border-radius:10px; cursor:pointer; font-weight:800;
+    box-shadow: 0 6px 18px rgba(18,90,60,0.12);
+  }
+  .btn.ghost{ background:transparent; color:var(--muted); border:1px solid rgba(0,0,0,0.06); box-shadow:none; font-weight:700 }
+  .small{ padding:8px 10px; border-radius:8px; font-weight:700 }
+
+  .choice-groups{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:6px }
+  @media(max-width:980px){ .choice-groups{ grid-template-columns:1fr } }
+
+  .group{ background:rgba(255,255,255,0.8); padding:10px; border-radius:12px; min-height:160px; display:flex; flex-direction:column; gap:8px; overflow:auto }
+  .group h4{ margin:0 0 6px 0; font-size:14px }
+  .action{
+    display:flex; align-items:center; gap:10px; padding:8px; border-radius:10px; cursor:pointer;
+    transition: transform .12s ease, box-shadow .12s ease; background:linear-gradient(180deg,#fff,#fbfffc);
+    border:1px solid rgba(0,0,0,0.03)
+  }
+  .action:hover{ transform:translateY(-4px); box-shadow: 0 12px 22px rgba(10,30,18,0.06) }
+  .action .ico{ width:38px; height:38px; border-radius:10px; display:flex;align-items:center;justify-content:center; font-weight:800 }
+  .action .meta{ font-weight:700 }
+  .impact{ font-weight:900; margin-left:auto; padding:6px 8px; border-radius:8px; font-size:13px }
+
+  .impact.pos{ color:#0b7a3f; background:rgba(10,120,63,0.06) }
+  .impact.neg{ color:var(--danger); background:rgba(201,74,63,0.06) }
+  .impact.neu{ color:#7b7b7b; background:rgba(120,120,120,0.04) }
+
+  .log-box{ background:var(--panel); padding:10px; border-radius:12px; min-height:120px; max-height:240px; overflow:auto; }
+  .log-entry{ font-size:13px; padding:8px 6px; border-bottom:1px dashed rgba(0,0,0,0.04) }
+  .log-entry strong{ display:inline-block; width:90px }
+
+  .modal-backdrop{ position:fixed; inset:0; display:flex; align-items:center; justify-content:center; z-index:9999;
+    background:linear-gradient(0deg, rgba(0,0,0,0.35), rgba(0,0,0,0.25)); }
+  .modal{ width:360px; background:white; border-radius:14px; padding:18px; box-shadow:0 30px 80px rgba(5,15,10,0.45) }
+  .modal h2{ margin:0 0 6px 0 }
+  .modal p{ margin:0 0 12px 0; color:var(--muted) }
+
+  .muted{ color:var(--muted); font-size:13px }
+  .tiny{ font-size:12px; color:#6a6a6a }
+
+  .log-box::-webkit-scrollbar, .group::-webkit-scrollbar { height:10px; width:8px }
+  .log-box::-webkit-scrollbar-thumb, .group::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.08); border-radius:8px }
+
+</style>
+</head>
+<body>
+
+<div class="app" role="application" aria-label="Eco Rush Game">
+
+  <!-- LEFT: EARTH & HUD -->
+  <section class="earth-panel" aria-label="Bumi Panel">
+    <div class="top-row">
+      <div>
+        <div class="title">Eco Rush</div>
+        <div class="tiny">
+Teman-teman Sanbears adalah pengatur bumi, kalian memiliki tanggung jawab untuk menjaga bumi agar tetap sehat dan aman        </div>
+      </div>
+      <div class="label-chip">Sanbear Change</div>
+    </div>
+
+    <div class="earth-wrap">
+      <!-- SVG Earth with islands -->
+      <div id="earthContainer" class="earth-svg" aria-hidden="true">
+        <svg id="earthSVG" viewBox="0 0 400 400" width="100%" height="100%">
+          <defs>
+            <radialGradient id="seaGrad" cx="30%" cy="30%">
+              <stop offset="0%" stop-color="#8ee6ff"/>
+              <stop offset="45%" stop-color="#38b6ff"/>
+              <stop offset="100%" stop-color="#046a9a"/>
+            </radialGradient>
+            <filter id="blurGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="12" result="b"/>
+              <feBlend in="SourceGraphic" in2="b" mode="screen"/>
+            </filter>
+          </defs>
+
+          <!-- sea -->
+          <circle cx="200" cy="200" r="185" fill="url(#seaGrad)"/>
+
+          <!-- islands group (each island gets id and classes) -->
+          <!-- island A (big) -->
+          <g id="islandA" transform="translate(70,110)">
+            <path d="M80 10 C40 20 10 60 18 98 C26 140 75 160 120 148 C160 138 170 100 150 70 C130 40 100 5 80 10Z"
+                  fill="#0b5a3a" />
+            <circle cx="50" cy="60" r="8" fill="#2ec76f" opacity="0.85"/>
+          </g>
+
+          <!-- island B -->
+          <g id="islandB" transform="translate(230,50) scale(.9)">
+            <path d="M60 18 C30 22 10 48 16 74 C24 100 54 112 84 100 C110 90 118 62 104 42 C92 26 74 14 60 18Z"
+                  fill="#0b5a3a" />
+            <circle cx="75" cy="45" r="6" fill="#2ec76f" opacity="0.9"/>
+          </g>
+
+          <!-- island C (small) -->
+          <g id="islandC" transform="translate(140,250) scale(.85)">
+            <path d="M40 8 C20 12 8 30 10 46 C12 66 36 76 56 72 C70 68 76 52 70 40 C62 22 48 6 40 8Z"
+                  fill="#0b5a3a"/>
+          </g>
+
+          <!-- island D (archipelago) -->
+          <g id="islandD" transform="translate(270,230) scale(.7)">
+            <path d="M26 6 C12 10 4 18 6 28 C8 36 20 42 32 40 C44 36 50 28 46 20 C40 12 34 6 26 6Z" fill="#0b5a3a"/>
+            <path d="M58 18 C48 22 44 28 46 34 C50 44 66 46 76 42 C86 36 90 26 84 20 C76 14 66 12 58 18Z" fill="#0b5a3a"/>
+          </g>
+
+          <!-- clouds -->
+          <g id="clouds" opacity="0.9">
+            <ellipse cx="120" cy="80" rx="36" ry="12" fill="#fff" opacity="0.85"/>
+            <ellipse cx="300" cy="110" rx="52" ry="14" fill="#fff" opacity="0.7"/>
+            <ellipse cx="210" cy="30" rx="28" ry="8" fill="#fff" opacity="0.6"/>
+          </g>
+
+          <!-- cracks overlay -->
+          <g id="cracks" opacity="0">
+            <path d="M170 70 L190 110 L170 140" stroke="#5a2f2f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M240 140 L210 160 L195 190" stroke="#5a2f2f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M120 230 L140 250 L130 270" stroke="#5a2f2f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </g>
+
+          <!-- heal rings -->
+          <circle id="healRing" cx="200" cy="200" r="190" fill="none" stroke="rgba(100,220,140,0.08)" stroke-width="20" opacity="0"/>
+        </svg>
+
+        <!-- floating leaves (CSS-controlled) -->
+<img src="assets/img/download.png"
+     alt=""
+     class="leaf"
+     id="leaf1"
+     style="left:30%; top:12%; width:80px; height:auto;" />
+     <img src="assets/img/download.png"
+     alt=""
+     class="leaf"
+     id="leaf2"
+     style="left:68%; top:14%; width:80px; height:auto;" />
+      </div>
+
+      <!-- HUD -->
+      <div class="hud" style="width:100%">
+        <div class="health-card" style="flex:1">
+          <div class="health-label" id="healthPct">80%</div>
+          <div class="health-bar" style="margin-top:8px"><div id="healthFill" class="health-fill" style="width:80%; background:linear-gradient(90deg,#4dd07a,#2ab6d6)"></div></div>
+          <div class="tiny" style="margin-top:8px">Dampak aksi dan gambaran planet bumi</div>
+        </div>
+        <div style="width:110px;text-align:center">
+          <div class="label-chip year-badge">Tahun</div>
+          <div class="label-chip" id="year">2025</div>
+        </div>
+      </div>
+
+      <div style="width:100%; display:flex; gap:8px; justify-content:center; margin-top:8px">
+        <button class="btn" id="btnSim5">Simulasi 5 Tahun</button>
+        <button class="btn ghost" id="btnReset">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- RIGHT: ACTIONS, LOG -->
+  <aside class="sidebar" aria-label="Kontrol dan Pilihan">
+    <div class="controls">
+      <div>
+        <div class="tiny">Tentukanlah aksi untuk melihat dampak</div>
+        <div class="muted">Kategori: Positif / Netral / Negatif</div>
+      </div>
+      <div style="text-align:right">
+        <div class="tiny">Skor</div>
+        <div class="small label-chip" id="scoreMini">80</div>
+      </div>
+    </div>
+
+    <div class="choice-groups" id="groups">
+      <div class="group" aria-live="polite">
+        <h4>Positif (Aksi yang baik untuk Bumi)</h4>
+        <!-- actions will be injected here -->
+      </div>
+      <div class="group">
+        <h4>Netral / Ringan (Aksi yang cukup baik untuk Bumi)</h4>
+      </div>
+      <div class="group">
+        <h4>Negatif (Aksi yang kurang baik untuk Bumi)</h4>
+      </div>
+      <div class="group">
+        <h4>Ekstrem (Aksi yang sangat tidak baik untuk Bumi!)</h4>
+      </div>
+    </div>
+
+    <div>
+      <div style="display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:6px">
+        <div class="tiny">Catatan Perjalanan</div>
+        <div><button class="btn ghost" id="exportCSV">Download CSV</button></div>
+      </div>
+      <div class="log-box" id="logBox" role="log" aria-live="polite">
+        <div class="log-entry">Belum ada aksi </div>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- POPUP -->
+<div id="modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <h2 id="modalTitle">Eco Alert!</h2>
+    <p>Kamu adalah pengatur Bumi. Setiap keputusanmu akan mempengaruhi pulau, ekosistem, dan generasi masa depan. Mau mulai?</p>
+    <div style="display:flex;gap:10px;margin-top:12px;justify-content:flex-end;">
+      <button class="btn ghost" id="closeModal">Close</button>
+      <button class="btn" id="startQuest">Jalani Quest</button>
+    </div>
+  </div>
+</div>
+
+<script>
+
+let health = 80;         // 0 - 100
+let year = 2025;
+const minH = 0, maxH = 100;
+const log = [];
+
+const ACTIONS = [
+  {id:'a_bike', label:'Naik Sepeda ke Sekolah', impact:+6, cat:'pos', desc:'Mengurangi emisi dari transportasi pribadi harian.'},
+  {id:'a_bus', label:'Naik Transportasi Umum', impact:+5, cat:'pos', desc:'Mengurangi kendaraan pribadi di jalan.'},
+  {id:'a_tree', label:'Menanam Pohon di Lingkungan', impact:+10, cat:'pos', desc:'Penyerap CO₂ & habitat lokal membaik.'},
+  {id:'a_solar', label:'Pasang Panel Surya Rumah', impact:+9, cat:'pos', desc:'Energi bersih menyebabkan emisi menurun.'},
+  {id:'a_recycle', label:'Daur Ulang Sampah Plastik', impact:+6, cat:'pos', desc:'Mengurangi akumulasi sampah plastik.'},
+
+  {id:'n_tote', label:'Bawa Tote Bag Saat Belanja', impact:+3, cat:'neu', desc:'Kurangi plastik sekali pakai.'},
+  {id:'n_savewater', label:'Hemat Air Saat Mandi', impact:+4, cat:'neu', desc:'Penggunaan air lebih efisien.'},
+  {id:'n_local', label:'Beli Produk Lokal', impact:+2, cat:'neu', desc:'Kurangi jarak distribusi & emisi.'},
+
+  {id:'d_car', label:'Selalu Pakai Mobil Pribadi', impact:-8, cat:'neg', desc:'Emisi CO₂ meningkat.'},
+  {id:'d_fast', label:'Beli Pakaian Fast Fashion', impact:-7, cat:'neg', desc:'Produksi massal merusak lingkungan.'},
+  {id:'d_ac', label:'AC Menyalakan Sepanjang Hari', impact:-9, cat:'neg', desc:'Konsumsi energi & emisi naik.'},
+  {id:'d_litter', label:'Membuang Sampah Sembarangan', impact:-12, cat:'neg', desc:'Mencemari tanah & sungai.'},
+
+  {id:'x_dump', label:'Buang Limbah Ke Sungai (Ilegal)', impact:-18, cat:'ext', desc:'Krisis ekosistem & kesehatan publik.'},
+  {id:'x_clear', label:'Menebang Hutan Secara Besar', impact:-20, cat:'ext', desc:'Hilangnya habitat & karbon penyimpan.'},
+  {id:'x_oil', label:'Eksploitasi Sumur Minyak Liar', impact:-22, cat:'ext', desc:'Polusi berat & bencana lingkungan.'},
+  {id:'x_war', label:'Konflik Lingkungan Skala Besar', impact:-25, cat:'ext', desc:'Kerusakan besar & pemulihan lama.'}
+];
+
+const GROUP_ORDER = ['pos','neu','neg','ext'];
+
+
+const healthPctEl = document.getElementById('healthPct');
+const healthFill = document.getElementById('healthFill');
+const yearEl = document.getElementById('year');
+const scoreMini = document.getElementById('scoreMini');
+const logBox = document.getElementById('logBox');
+const modal = document.getElementById('modal');
+const earthSVG = document.getElementById('earthSVG');
+const cracks = document.getElementById('cracks');
+const healRing = document.getElementById('healRing');
+const islandA = document.querySelector('#islandA path');
+const islandB = document.querySelector('#islandB path');
+const islandC = document.querySelector('#islandC path');
+const islandD = document.querySelectorAll('#islandD path');
+const clouds = document.getElementById('clouds');
+
+const clamp = (v,a,b) => Math.max(a, Math.min(b, v));
+
+function lerpHex(aHex, bHex, t){
+  const a = aHex.replace('#','');
+  const b = bHex.replace('#','');
+  const ar = parseInt(a.slice(0,2),16), ag = parseInt(a.slice(2,4),16), ab = parseInt(a.slice(4,6),16);
+  const br = parseInt(b.slice(0,2),16), bg = parseInt(b.slice(2,4),16), bb = parseInt(b.slice(4,6),16);
+  const rr = Math.round(ar + (br - ar) * t);
+  const rg = Math.round(ag + (bg - ag) * t);
+  const rb = Math.round(ab + (bb - ab) * t);
+  const toHex = (n) => n.toString(16).padStart(2,'0');
+  return '#' + toHex(rr) + toHex(rg) + toHex(rb);
+}
+
+function updateEarth(){
+  const pct = clamp(health, minH, maxH);
+  healthPctEl.textContent = `${pct}%`;
+  healthFill.style.width = pct + '%';
+  scoreMini.textContent = pct;
+  yearEl.textContent = year;
+
+  // island color: healthy green -> unhealthy brown
+  const healthyColor = '#0b5a3a'; // green
+  const unhealthyColor = '#6b4b2b'; // brown
+  const t = pct / 100;
+  const color = lerpHex(unhealthyColor, healthyColor, t);
+
+  islandA.setAttribute('fill', color);
+  islandB.setAttribute('fill', color);
+  islandC.setAttribute('fill', color);
+  islandD.forEach(p=>p.setAttribute('fill', color));
+
+  // islands size change (simply scale group transform)
+  // bigger when healthy (coastline recovered), shrink when unhealthy
+  const scaleA = 0.8 + 0.6 * (t); // 0.8..1.4
+  const scaleB = 0.75 + 0.5 * (t);
+  const scaleC = 0.7 + 0.6 * (t);
+  document.getElementById('islandA').setAttribute('transform', `translate(70,110) scale(${scaleA})`);
+  document.getElementById('islandB').setAttribute('transform', `translate(230,50) scale(${scaleB})`);
+  document.getElementById('islandC').setAttribute('transform', `translate(140,250) scale(${scaleC})`);
+  document.getElementById('islandD').setAttribute('transform', `translate(270,230) scale(${0.6 + 0.5*t})`);
+
+  // clouds visibility (less clouds when very bad)
+  clouds.style.opacity = 0.25 + (t * 0.75);
+
+  // heal ring appears when very healthy
+  healRing.style.opacity = t > 0.8 ? 1 : 0;
+
+  // cracks appear when health low
+  const crackOpacity = pct < 50 ? Math.min(0.95, (50 - pct) / 50 * 1.2) : 0;
+  cracks.style.opacity = crackOpacity;
+
+  // earth scale pulse when critical
+  const earthContainer = document.getElementById('earthContainer');
+  if (pct < 25) {
+    earthContainer.style.transform = 'scale(1.06) rotate(-1deg)';
+  } else if (pct < 45) {
+    earthContainer.style.transform = 'scale(1.03)';
+  } else {
+    earthContainer.style.transform = 'scale(1)';
+  }
+
+  // health bar color shift
+  if (pct > 65) {
+    healthFill.style.background = 'linear-gradient(90deg,#48e07f,#2ab6d6)';
+  } else if (pct > 35) {
+    healthFill.style.background = 'linear-gradient(90deg,#f3d267,#f59e4b)';
+  } else {
+    healthFill.style.background = 'linear-gradient(90deg,#ff7b7b,#c94a3f)';
+  }
+
+  const leaf1 = document.getElementById('leaf1'), leaf2 = document.getElementById('leaf2');
+  if (pct >= 75){
+    leaf1.style.opacity = 1; leaf1.style.transform = 'translateY(-20px) rotate(-12deg)';
+    leaf2.style.opacity = 1; leaf2.style.transform = 'translateY(20px) rotate(8deg)';
+  } else {
+    leaf1.style.opacity = 0; leaf2.style.opacity = 0;
+  }
+}
+
+function renderActions(){
+  // groups: the four group divs in order
+  const groups = document.querySelectorAll('.group');
+  groups.forEach(g => g.querySelectorAll('.action')?.forEach(n=>n.remove())); // clear existing actions
+
+  // group by category
+  GROUP_ORDER.forEach((cat, idx) => {
+    const container = groups[idx];
+    const items = ACTIONS.filter(a=>a.cat===cat);
+    items.forEach(a => {
+      const el = document.createElement('div');
+      el.className = 'action';
+      el.dataset.id = a.id;
+      el.dataset.impact = a.impact;
+      el.title = a.desc;
+      const ico = document.createElement('div'); ico.className='ico'; ico.textContent = a.label.split(' ').slice(0,1)[0].slice(0,2).toUpperCase();
+      const meta = document.createElement('div'); meta.className='meta'; meta.innerHTML = `<div>${a.label}</div><div class="tiny" style="font-weight:500;opacity:.7">${a.desc}</div>`;
+      const impact = document.createElement('div'); impact.className='impact ' + (a.impact>0?'pos':(a.impact<0?'neg':'neu')); impact.textContent = (a.impact>0?'+':'')+a.impact;
+      el.appendChild(ico); el.appendChild(meta); el.appendChild(impact);
+
+      el.addEventListener('click', ()=>{
+        applyAction(a);
+        el.style.transform = 'translateY(0)';
+      });
+      container.appendChild(el);
+    });
+  });
+}
+
+function applyAction(action){
+  const prev = health;
+  health = clamp( Math.round((health + action.impact)*100)/100, minH, maxH );
+  year += 1;
+  const entry = `${year} — ${action.label} (${action.impact>0?'+':''}${action.impact}) — ${prev}% → ${health}%`;
+  log.push(entry);
+  pushLog(entry);
+  updateEarth();
+}
+
+function pushLog(text){
+  const first = logBox.querySelector('.log-entry');
+  if (first && log.length===1 && first.textContent.includes('Belum ada aksi')) first.remove();
+
+  const div = document.createElement('div');
+  div.className = 'log-entry';
+  div.innerHTML = `<strong>${text.split(' — ')[0]}</strong> ${text.split(' — ').slice(1).join(' — ')}`;
+  logBox.prepend(div);
+}
+
+function resetState(){
+  health = 80; year = 2025; log.length = 0;
+  logBox.innerHTML = '<div class="log-entry">Belum ada aksi — klik “Jalani Quest” dari popup awal atau pilih aksi di samping.</div>';
+  updateEarth();
+}
+
+function simulateYears(n=5){
+  const pool = ACTIONS;
+  for (let i=0;i<n;i++){
+    const choice = pool[Math.floor(Math.random()*pool.length)];
+    applyAction(choice);
+  }
+}
+
+function exportCSV(){
+  if (log.length===0) return alert('Belum ada data untuk diexport.');
+  const csv = ['year,action,impact,from_to'];
+  log.slice().reverse().forEach(l=>{
+    const parts = l.split(' — ');
+    const yearPart = parts[0];
+    const label = parts[1] || '';
+    const impact = (label.match(/\((\-|\+)?\d+\)/)||[''])[0].replace(/[()]/g,'') || '';
+    const ft = parts[2] || '';
+    csv.push(`${yearPart.replace(/\s/g,'')}, "${label.replace(/"/g,'')}", ${impact}, "${ft}"`);
+  });
+  const blob = new Blob([csv.join('\n')], {type:'text/csv'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href=url; a.download='eco_rush_log.csv'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+}
+
+document.getElementById('startQuest').addEventListener('click', ()=>{ modal.style.display='none'; });
+document.getElementById('closeModal').addEventListener('click', ()=>{ modal.style.display='none'; });
+document.getElementById('btnReset').addEventListener('click', resetState);
+document.getElementById('btnSim5').addEventListener('click', ()=>{ simulateYears(5); });
+document.getElementById('exportCSV').addEventListener('click', exportCSV);
+
+document.addEventListener('keydown', (e)=>{
+  if (e.key==='r'){ resetState(); }
+  if (e.key==='s'){ simulateYears(3); }
+});
+
+renderActions();
+updateEarth();
+
+document.addEventListener('keydown', (e)=>{ if (e.key==='Escape') modal.style.display='none'; });
+
+if (!islandA) console.warn('SVG islands not found (browser may not support inline SVG transforms)');
+
+</script>
+</body>
+</html>
