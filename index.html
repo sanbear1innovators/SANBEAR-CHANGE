@@ -1474,8 +1474,10 @@ Pada bagian ini, kami akan menjelaskan informasi seputar bunga dan anuitas untuk
 
 
 
-
-<section id="featured-gamers" style="background:linear-gradient(180deg,#d4f8ff 0%,#45a2ba 100%);color:#fff;padding:80px 0;font-family:'Poppins',sans-serif;">
+ 
+<section id="featured-gamers" style="background-image: url('assets/img/Gem.png'); 
+           background-size: cover; 
+           background-position: center; color:#fff;padding:80px 0;font-family:'Poppins',sans-serif;">
 
   <style>
     #featured-gamers .section-title {
@@ -1485,7 +1487,7 @@ Pada bagian ini, kami akan menjelaskan informasi seputar bunga dan anuitas untuk
     #featured-gamers h2 {
       font-size: 2.5rem;
       font-weight: 800;
-      background: linear-gradient(90deg,#adbdff,#60adff,#1a4878);
+      background: linear-gradient(90deg,#345f87,#3c8898,#1a4878);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -1541,7 +1543,7 @@ Pada bagian ini, kami akan menjelaskan informasi seputar bunga dan anuitas untuk
       position: absolute;
       top: 12px;
       left: 12px;
-      background: linear-gradient(90deg,#5cdff6,#486eec);
+      background: linear-gradient(90deg,#482b13,#e4a2f6);
       padding: 6px 12px;
       border-radius: 999px;
       font-size: 12px;
@@ -1558,14 +1560,16 @@ Pada bagian ini, kami akan menjelaskan informasi seputar bunga dan anuitas untuk
       font-size: 1.3rem;
       font-weight: 700;
       margin: 0;
-      color: #fff;
+      color: #9a3737;
     }
 
-    .gamer-info p {
-      color: #9ca3af;
-      margin: 6px 0 14px;
-      font-size: 0.95rem;
-    }
+   .gamer-info {
+  padding: 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  border-top: 1px solid rgba(255,255,255,0.3);
+}
 
     .gamer-stats {
       display: flex;
@@ -1590,14 +1594,14 @@ Pada bagian ini, kami akan menjelaskan informasi seputar bunga dan anuitas untuk
       border-radius: 999px;
       padding: 5px 10px;
       font-size: 12px;
-      color: #a1a1aa;
+      color: #fff;
     }
 
     .profile-link {
       text-decoration: none;
       display: inline-block;
       margin-top: 6px;
-      background: linear-gradient(90deg,#8680ff,#4869ec);
+      background: linear-gradient(90deg,#8bff80,#166d23);
       color: #fff;
       padding: 8px 18px;
       border-radius: 999px;
@@ -1606,7 +1610,7 @@ Pada bagian ini, kami akan menjelaskan informasi seputar bunga dan anuitas untuk
     }
 
     .profile-link:hover {
-      background: linear-gradient(90deg,#a5f3ff,#5c9af6);
+      background: linear-gradient(90deg,#0b3923,#0e472c);
     }
 
     .contact-buttons {
@@ -1652,49 +1656,52 @@ Pada bagian ini, kami akan menjelaskan informasi seputar bunga dan anuitas untuk
   </style>
   
   <div class="container section-title">
-    <h2>🎮 Permainan Kami</h2>
-    <p>Berikut ini adalah permainan kami seputar dengan dunia finansial!</p>
+   <span style="background: linear-gradient(90deg, #193269, #2e6380, #5384b3); 
+             -webkit-background-clip: text; 
+             color: transparent; 
+             font-weight: bold;
+             font-size: 40px;">🎮 Permainan Kami</span>
+    <p>Berikut ini adalah permainan Sanbear Change untuk menambah wawasan dan ilmu teman-teman Sanbear! 🌏🤍</p>
   </div>
 
   <div class="gamer-grid">
 
     <div class="gamer-card">
       <div class="gamer-img">
-        <img src="assets/img/Foto 1.png" alt="LunaStrike">
-        <span class="badge">MVP</span>
+        <img src="assets/img/2.png" alt="LunaStrike">
+        <span class="badge">Inovatif</span>
       </div>
       <div class="gamer-info">
-        <h3><font color=black>Finance Memory</font></h3>
-        <a href="fm.html" class="profile-link">View Profile</a>
+        <h3><font color=black>Eco Rush</font></h3>
+        <a href=eco.html class="profile-link">View Game</a>
       </div>
     </div>
 
     <div class="gamer-card">
       <div class="gamer-img">
-        <img src="assets/img/Foto 2.png" alt="NovaBlade">
-        <h1> Finance Memory</h1>
-        <span class="badge">Certified</span>
+        <img src="assets/img/1.png" alt="NovaBlade">
+        <h1> Carbon Quest</h1>
+        <span class="badge">Cerdas</span>
       </div>
       <div class="gamer-info">
-        <h3><font color=black>Finding Finance</font></h3>
-        <a href="ff.html" class="profile-link">View Profile</a>
+        <h3><font color=black>Green Trials</font></h3>
+        <a href="green.html" class="profile-link">View Game</a>
       </div>
     </div>
 
     <div class="gamer-card">
       <div class="gamer-img">
-        <img src="assets/img/Foto 3.png" alt="Papermemory">
-        <span class="badge">Certified</span>
+        <img src="assets/img/3.png" alt="Papermemory">
+        <span class="badge">Persatuan</span>
       </div>
       <div class="gamer-info">
-        <h3><font color=black>Finance Bound</font></h3>
-        <a href="fb.html" class="profile-link">View Profile</a>
+        <h3><font color=black>Carbon Quest</font></h3>
+        <a href="carbon.html" class="profile-link">View Game</a>
       </div>
     </div>
 
   </div>
 </section>
-
 
 <script>
   const faqItems = document.querySelectorAll('.faq-item');
