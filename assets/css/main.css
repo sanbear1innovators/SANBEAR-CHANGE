@@ -1,44 +1,18 @@
-/**
-* Template Name: Medilab
-* Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
-* Updated: Aug 07 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
---------------------------------------------------------------*/
-/* Fonts */
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Poppins",  sans-serif;
   --nav-font: "Raleway",  sans-serif;
 }
 
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #2c643b; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #438447; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --background-color: #ffffff;
+  --default-color: #444444; 
+  --heading-color: #2c643b;
+  --accent-color: #438447; 
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff; 
 }
-
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
-:root {
-  --nav-color: #2c4964;  /* The default color of the main navmenu links */
-  --nav-hover-color: #1977cc; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #2c4964; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #1977cc; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
-}
-
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
-
 .light-background {
   --background-color: #f1f7fc;
   --surface-color: #ffffff;
@@ -52,15 +26,10 @@
   --contrast-color: #ffffff;
 }
 
-
-/* Smooth scroll */
 :root {
   scroll-behavior: smooth;
 }
 
-/*--------------------------------------------------------------
-# General Styling & Shared Classes
---------------------------------------------------------------*/
 body {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -88,17 +57,19 @@ h6 {
   font-family: var(--heading-font);
 }
 
-/* Pulsating Play Button
-------------------------------*/
 .pulsating-play-btn {
   width: 94px;
   height: 94px;
-  background: radial-gradient(var(--accent-color) 50%, color-mix(in srgb, var(--accent-color), transparent 75%) 52%);
+  background: radial-gradient(
+    var(--accent-color) 50%,
+    color-mix(in srgb, var(--accent-color), transparent 75%) 52%
+  );
   border-radius: 50%;
   display: block;
   position: relative;
   overflow: hidden;
 }
+
 
 .pulsating-play-btn:before {
   content: "";
@@ -167,8 +138,6 @@ h6 {
   }
 }
 
-/* PHP Email Form Messages
-------------------------------*/
 .button-container {
   text-align: center;
 }
@@ -201,9 +170,7 @@ h6 {
   color: #4CAF50;
   margin-top: 20px;
 }
-/*--------------------------------------------------------------
-# Global Header
---------------------------------------------------------------*/
+
 .header {
   color: var(--default-color);
   transition: all 0.5s;
@@ -324,10 +291,6 @@ h6 {
   overflow: hidden;
 }
 
-/*--------------------------------------------------------------
-# Navigation Menu
---------------------------------------------------------------*/
-/* Desktop Navigation */
 @media (min-width: 1200px) {
   .navmenu {
     padding: 0;
@@ -522,7 +485,6 @@ h6 {
   }
 
 
-/* Mobile Navigation */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
     color: var(--nav-color);
@@ -590,7 +552,7 @@ h6 {
   }
 #leaf1 {
   width: 120px;
-  height: 120px; /* keeps proportions */
+  height: 120px; 
 }
  
   .navmenu a:hover,
@@ -652,9 +614,7 @@ h6 {
   }
 }
 
-/*--------------------------------------------------------------
-# Featured Properties Section
---------------------------------------------------------------*/
+
 .featured-properties .grid-featured {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -1195,9 +1155,6 @@ h6 {
   background: color-mix(in srgb, var(--accent-color), transparent 92%);
 }
 
-/*--------------------------------------------------------------
-# Global Footer
---------------------------------------------------------------*/
 .footer {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -1314,9 +1271,7 @@ h6 {
   font-size: 13px;
 }
 
-/*--------------------------------------------------------------
-# Preloader
---------------------------------------------------------------*/
+
 #preloader {
   position: fixed;
   inset: 0;
@@ -1349,9 +1304,6 @@ h6 {
   }
 }
 
-/*--------------------------------------------------------------
-# Scroll Top Button
---------------------------------------------------------------*/
 .scroll-top {
   position: fixed;
   visibility: hidden;
@@ -1382,18 +1334,12 @@ h6 {
   opacity: 1;
 }
 
-/*--------------------------------------------------------------
-# Disable aos animation delay on mobile devices
---------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
   [data-aos-delay] {
     transition-delay: 0 !important;
   }
 }
 
-/*--------------------------------------------------------------
-# Global Page Titles & Breadcrumbs
---------------------------------------------------------------*/
 .page-title {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -1435,9 +1381,6 @@ h6 {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
-/*--------------------------------------------------------------
-# Global Sections
---------------------------------------------------------------*/
 section,
 .section {
   color: var(--default-color);
@@ -1455,9 +1398,6 @@ section,
   }
 }
 
-/*--------------------------------------------------------------
-# Global Section Titles
---------------------------------------------------------------*/
 .section-title {
   text-align: center;
   padding-bottom: 60px;
@@ -1502,9 +1442,7 @@ section,
   margin-bottom: 0;
 }
 
-/*--------------------------------------------------------------
-# Hero Section
---------------------------------------------------------------*/
+
 .hero {
   width: 100%;
   min-height: calc(100vh - 112px);
@@ -1695,9 +1633,6 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 0%);
 }
 
-/*--------------------------------------------------------------
-# About Section
---------------------------------------------------------------*/
 .about .content h3 {
   font-size: 2rem;
   text-align: justify;
@@ -1746,18 +1681,15 @@ section,
   top: calc(70% - 47px);
 }
 
-/*--------------------------------------------------------------
-# Stats Section
---------------------------------------------------------------*/
 
 .stats{
-  justify-content: center; /* Centers horizontally */
+  justify-content: center;
 }
 
 
 .stats i {
   color: var(--contrast-color);
-  justify-content: center; /* Centers horizontally */
+  justify-content: center; 
   background-color: var(--accent-color);
   box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
   width: 60px;
@@ -1774,7 +1706,7 @@ section,
 
 .stats .stats-item {
   background-color: var(--surface-color);
-  justify-content: center; /* Centers horizontally */
+  justify-content: center; 
   margin-top: -27px;
   padding: 30px 30px 25px 30px;
   width: 100%;
@@ -1787,7 +1719,7 @@ section,
 
 .stats .stats-item span {
   font-size: 32px;
-  justify-content: center; /* Centers horizontally */
+  justify-content: center;
   display: block;
   margin: 10px 0;
   font-weight: 700;
@@ -1795,16 +1727,13 @@ section,
 }
 
 .stats .stats-item p {
-  justify-content: center; /* Centers horizontally */
+  justify-content: center; 
   padding: 0;
   margin: 0;
   font-family: var(--heading-font);
   font-size: 16px;
 }
 
-/*--------------------------------------------------------------
-# Services Section
---------------------------------------------------------------*/
 .services .service-item {
   background-color: var(--surface-color);
   text-align: center;
@@ -1881,9 +1810,6 @@ section,
   color: var(--contrast-color);
 }
 
-/*--------------------------------------------------------------
-# Appointment Section
---------------------------------------------------------------*/
 .appointment .php-email-form {
   width: 100%;
 }
@@ -1938,9 +1864,6 @@ section,
   background: color-mix(in srgb, var(--accent-color) 90%, white 15%);
 }
 
-/*--------------------------------------------------------------
-# Departments Section
---------------------------------------------------------------*/
 .departments {
   overflow: hidden;
 }
@@ -2000,9 +1923,6 @@ section,
   }
 }
 
-/*--------------------------------------------------------------
-# Doctors Section
---------------------------------------------------------------*/
 .doctors .team-member {
   background-color: var(--surface-color);
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
@@ -2126,9 +2046,6 @@ section,
   margin-left: 8px;
 }
 
-/*--------------------------------------------------------------
-# Faq Section
---------------------------------------------------------------*/
 .faq .faq-container .faq-item {
   background-color: var(--surface-color);
   position: relative;
@@ -2213,9 +2130,6 @@ section,
   color: var(--accent-color);
 }
 
-/*--------------------------------------------------------------
-# Testimonials Section
---------------------------------------------------------------*/
 .testimonials .info h3 {
   font-weight: 700;
   font-size: 32px;
@@ -2327,9 +2241,6 @@ section,
   }
 }
 
-/*--------------------------------------------------------------
-# Gallery Section
---------------------------------------------------------------*/
 .gallery .gallery-item {
   overflow: hidden;
   border-right: 3px solid var(--background-color);
@@ -2344,9 +2255,6 @@ section,
   transform: scale(1.1);
 }
 
-/*--------------------------------------------------------------
-# Contact Section
---------------------------------------------------------------*/
 .contact .info-item+.info-item {
   margin-top: 40px;
 }
@@ -2419,9 +2327,6 @@ section,
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
+
 .starter-section {
-  /* Add your styles here */
 }
