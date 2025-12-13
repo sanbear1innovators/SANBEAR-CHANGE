@@ -1,17 +1,6 @@
-/**
-* Template Name: Medilab
-* Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
-* Updated: Aug 07 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 (function() {
   "use strict";
 
-  /**
-   * Apply .scrolled class to the body as the page is scrolled down
-   */
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
@@ -22,9 +11,6 @@
   document.addEventListener('scroll', toggleScrolled);
   window.addEventListener('load', toggleScrolled);
 
-  /**
-   * Mobile nav toggle
-   */
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
 
   function mobileNavToogle() {
@@ -34,21 +20,14 @@
   }
   mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
 
-  /**
-   * Hide mobile nav on same-page/hash links
-   */
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
     navmenu.addEventListener('click', () => {
       if (document.querySelector('.mobile-nav-active')) {
         mobileNavToogle();
       }
     });
-
   });
 
-  /**
-   * Toggle mobile nav dropdowns
-   */
   document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
     navmenu.addEventListener('click', function(e) {
       e.preventDefault();
@@ -57,20 +36,17 @@
       e.stopImmediatePropagation();
     });
   });
+
   function showPopup() {
     document.getElementById("popupMessage").style.display = "block";
     document.getElementById("popupBackdrop").style.display = "block";
-}
+  }
 
-function closePopup() {
+  function closePopup() {
     document.getElementById("popupMessage").style.display = "none";
     document.getElementById("popupBackdrop").style.display = "none";
-}
+  }
 
-
-  /**
-   * Preloader
-   */
   const preloader = document.querySelector('#preloader');
   if (preloader) {
     window.addEventListener('load', () => {
@@ -78,9 +54,6 @@ function closePopup() {
     });
   }
 
-  /**
-   * Scroll top button
-   */
   let scrollTop = document.querySelector('.scroll-top');
 
   function toggleScrollTop() {
@@ -88,6 +61,7 @@ function closePopup() {
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
+
   scrollTop.addEventListener('click', (e) => {
     e.preventDefault();
     window.scrollTo({
@@ -99,9 +73,6 @@ function closePopup() {
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
 
-  /**
-   * Animation on scroll function and init
-   */
   function aosInit() {
     AOS.init({
       duration: 600,
@@ -110,32 +81,21 @@ function closePopup() {
       mirror: false
     });
   }
+
   window.addEventListener('load', aosInit);
 
-  /**
-   * Initiate glightbox
-   */
   const glightbox = GLightbox({
     selector: '.glightbox'
   });
 
-  /**
-   * Initiate Pure Counter
-   */
   new PureCounter();
 
-  /**
-   * Frequently Asked Questions Toggle
-   */
   document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle').forEach((faqItem) => {
     faqItem.addEventListener('click', () => {
       faqItem.parentNode.classList.toggle('faq-active');
     });
   });
 
-  /**
-   * Init swiper sliders
-   */
   function initSwiper() {
     document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
       let config = JSON.parse(
@@ -152,9 +112,6 @@ function closePopup() {
 
   window.addEventListener("load", initSwiper);
 
-  /**
-   * Correct scrolling position upon page load for URLs containing hash links.
-   */
   window.addEventListener('load', function(e) {
     if (window.location.hash) {
       if (document.querySelector(window.location.hash)) {
@@ -170,9 +127,6 @@ function closePopup() {
     }
   });
 
-  /**
-   * Navmenu Scrollspy
-   */
   let navmenulinks = document.querySelectorAll('.navmenu a');
 
   function navmenuScrollspy() {
@@ -189,6 +143,7 @@ function closePopup() {
       }
     })
   }
+
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
