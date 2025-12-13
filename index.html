@@ -1553,6 +1553,29 @@ The biggest cause came from greenhouse gas emissions (CO2 from cars, factories, 
 
   </div>
 </section>
+<script>
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+
+    question.addEventListener('click', () => {
+      const isOpen = item.classList.contains('active');
+
+      // Tutup SEMUA dulu
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('active');
+        i.querySelector('.faq-answer').style.maxHeight = null;
+      });
+
+      // Kalau sebelumnya BELUM kebuka → buka
+      if (!isOpen) {
+        item.classList.add('active');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+      // Kalau SUDAH kebuka → cukup ditutup (ga buka apa-apa)
+    });
+  });
+</script>
 
 <style>
   .opt-btn {
@@ -1571,196 +1594,6 @@ The biggest cause came from greenhouse gas emissions (CO2 from cars, factories, 
   .opt-correct { background: linear-gradient(90deg,#dff2e6,#bfe8cc); border-color:#7eaebf; color:#1f4f2f; }
   .opt-wrong { background:#fdecea; border-color:#f1b0a8; color:#8a2b25; }
 </style>
-
-<script>
-  const questions = [
-    {
-      id: 1,
-      text: "Ani menabung Rp300.000 di bank dengan bunga tunggal 16% per tahun. Berapa besar bunga yang didapat Ani setelah 1 tahun?",
-      options: {
-        A: "Rp30.000",
-        B: "Rp96.000",
-        C: "Rp48.000",
-        D: "Rp52.500"
-      },
-      correct: "C",
-      explanation: `<b>Rumus:</b> B = M₀ × b × n<br>
-                    B = 300.000 × 0.16 × 1 = <b>Rp48.000</b>`
-    },
-
-    {
-      id: 2,
-      text: "Ibu menabung Rp10.000.000 dengan bunga majemuk 5% per tahun. Berapa total tabungan setelah 10 tahun? (bulatkan ke 3 desimal)",
-      options: {
-        A: "Rp15.000.000",
-        B: "Rp16.288.946",
-        C: "Rp16.500.000",
-        D: "Rp12.763.000"
-      },
-      correct: "B",
-      explanation: `<b>Rumus:</b> Mₙ = M₀(1+i)ⁿ <br>
-        M₁₀ = 10.000.000 × (1.05)¹⁰ = 10.000.000 × 1.628894626777... ≈ <b>Rp16.288.946</b>`
-    },
-
-    {
-      id: 3,
-      text: "Seseorang mengajukan pinjaman Rp30.000.000, bunga 12%/tahun, jangka 3 tahun (cicilan bulanan). Berapa cicilan anuitas per bulan (dibulatkan)?",
-      options: {
-        A: "Rp996.300",
-        B: "Rp1.100.000",
-        C: "Rp900.000",
-        D: "Rp1.250.000"
-      },
-      correct: "A",
-      explanation: `<b>Langkah:</b><br>
-        i = 12% / 12 = 0.01; n = 3×12 = 36 <br>
-        A = P·i / (1 − (1+i)^{−n}) = 30.000.000×0.01 / (1 − 1.01^{-36}) ≈ <b>Rp996.300</b>`
-    },
-
-    // HOTS 1: compound interest with quarterly compounding
-    {
-      id: 4,
-      text: "HOTS: Modal Rp5.000.000, bunga 8% per tahun, dikompaun triwulanan (quarterly). Nilai akhir setelah 2 tahun?",
-      options: {
-        A: "Rp5.817.664",
-        B: "Rp5.832.000",
-        C: "Rp5.610.000",
-        D: "Rp5.920.000"
-      },
-      correct: "A",
-      explanation: `<b>Konversi:</b> m=4; i_per = 0.08/4 = 0.02; n_total = 2×4=8<br>
-        M = 5.000.000 × (1+0.02)^8 = 5.000.000 × 1.1635328 ≈ <b>Rp5.817.664</b>`
-    },
-
-    {
-      id: 5,
-      text: "HOTS: Nilai sekarang dari anuitas A=Rp2.000.000 per tahun selama 5 tahun dengan i=6% per tahun. Berapa PV (dibulatkan)?",
-      options: {
-        A: "Rp8.000.000",
-        B: "Rp8.417.000",
-        C: "Rp8.417.800",
-        D: "Rp8.397.000"
-      },
-      correct: "C",
-      explanation: `<b>Rumus:</b> PV = A × (1 − (1+i)^{-n}) / i<br>
-        PV = 2.000.000 × (1 − 1.06^{-5}) / 0.06 ≈ 2.000.000 × 4.2089 ≈ <b>Rp8.417.800</b>`
-    },
-
-    // HOTS 3: compare two compounding frequencies
-    {
-      id: 6,
-      text: "HOTS: Mana yang menghasilkan lebih besar setelah 1 tahun dari modal Rp1.000.000? (I) bunga 12% per tahun, dikompaun bulanan, (II) bunga 12% per tahun, dikompaun tahunan.",
-      options: {
-        A: "I > II",
-        B: "I = II",
-        C: "I < II",
-        D: "Tidak dapat ditentukan"
-      },
-      correct: "A",
-      explanation: `<b>Bandingkan:</b><br>
-        I: i_per = 0.12/12 = 0.01; M_I = 1.000.000 × (1.01)^{12} ≈ 1.000.000 × 1.126825 = 1.126.825<br>
-        II: M_II = 1.000.000 × (1.12) = 1.120.000<br>
-        Jadi <b>I &gt; II</b>.`
-    }
-  ];
-
-  let idx = 0;
-  let score = 0;
-
-  const qText = document.getElementById('q-text');
-  const qSub = document.getElementById('q-sub');
-  const optsDiv = document.getElementById('opts');
-  const resultDiv = document.getElementById('result');
-  const explDiv = document.getElementById('explanation');
-  const nextBtn = document.getElementById('next-btn');
-  const skipBtn = document.getElementById('skip-btn');
-  const progressDiv = document.getElementById('progress');
-  const scoreDiv = document.getElementById('score');
-
-  function renderQuestion() {
-    const q = questions[idx];
-    if (!q) return;
-    qText.innerHTML = q.text;
-    qSub.innerHTML = ''; // optional subtext
-    optsDiv.innerHTML = '';
-
-    // create buttons A-D in order
-    ['A','B','C','D'].forEach(letter => {
-      const btn = document.createElement('button');
-      btn.className = 'opt-btn';
-      btn.innerHTML = `<strong>${letter}.</strong>&nbsp; ${q.options[letter]}`;
-      btn.dataset.choice = letter;
-      btn.onclick = () => handleChoice(btn, letter);
-      optsDiv.appendChild(btn);
-    });
-
-    // reset UI
-    resultDiv.innerHTML = '';
-    explDiv.style.display = 'none';
-    explDiv.innerHTML = '';
-    nextBtn.style.display = 'none';
-    progressDiv.textContent = `Soal ${idx+1} / ${questions.length}`;
-  }
-
-  function handleChoice(btn, letter) {
-    // disable all options
-    const all = optsDiv.querySelectorAll('button');
-    all.forEach(b => { b.classList.add('disabled'); b.disabled = true; });
-
-    const q = questions[idx];
-    const correct = q.correct;
-    // mark selected
-    if (letter === correct) {
-      btn.classList.add('opt-correct');
-      resultDiv.innerHTML = `<span style="color:#1f6f3f">✔ Jawaban benar</span>`;
-      score += 1;
-      scoreDiv.textContent = `Skor: ${score}`;
-    } else {
-      btn.classList.add('opt-wrong');
-      resultDiv.innerHTML = `<span style="color:#8a2b25">✘ Jawaban salah</span>`;
-      // highlight correct button
-      const correctBtn = Array.from(all).find(x => x.dataset.choice === correct);
-      if (correctBtn) correctBtn.classList.add('opt-correct');
-    }
-
-    // show explanation & next
-    explDiv.style.display = 'block';
-    explDiv.innerHTML = q.explanation;
-    nextBtn.style.display = 'inline-block';
-  }
-
-  nextBtn.onclick = () => {
-    idx++;
-    if (idx >= questions.length) {
-      // finished
-      const wrap = document.getElementById('quiz-card');
-      wrap.innerHTML = `<div style="padding:40px;text-align:center">
-        <h2 style="color:#274033">🎉 Kamu selesai! Skor: ${score} / ${questions.length}</h2>
-        <p style="color:#516953;margin-top:8px">Klik refresh browser untuk ulang atau kembali ke materi.</p>
-      </div>`;
-      return;
-    }
-    renderQuestion();
-  };
-
-  skipBtn.onclick = () => {
-    // mark as skipped: reveal answer but no score change
-    const q = questions[idx];
-    const all = optsDiv.querySelectorAll('button');
-    all.forEach(b => { b.classList.add('disabled'); b.disabled = true; });
-    const correctBtn = Array.from(all).find(x => x.dataset.choice === q.correct);
-    if (correctBtn) correctBtn.classList.add('opt-correct');
-    resultDiv.innerHTML = `<span style="color:#a07a2f">→ Soal dilewati</span>`;
-    explDiv.style.display = 'block';
-    explDiv.innerHTML = q.explanation;
-    nextBtn.style.display = 'inline-block';
-  };
-
-  // init
-  renderQuestion();
-</script>
-
-
 
  
 <section id="featured-gamers" style="background-image: url('assets/img/Gem.png'); 
