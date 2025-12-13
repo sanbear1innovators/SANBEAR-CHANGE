@@ -131,7 +131,6 @@
 
 <div class="app" role="application" aria-label="Eco Rush Game">
 
-  <!-- LEFT: EARTH & HUD -->
   <section class="earth-panel" aria-label="Bumi Panel">
     <div class="top-row">
       <div>
@@ -143,7 +142,6 @@ Teman-teman Sanbears adalah pengatur bumi, kalian memiliki tanggung jawab untuk 
     </div>
 
     <div class="earth-wrap">
-      <!-- SVG Earth with islands -->
       <div id="earthContainer" class="earth-svg" aria-hidden="true">
         <svg id="earthSVG" viewBox="0 0 400 400" width="100%" height="100%">
           <defs>
@@ -158,55 +156,46 @@ Teman-teman Sanbears adalah pengatur bumi, kalian memiliki tanggung jawab untuk 
             </filter>
           </defs>
 
-          <!-- sea -->
           <circle cx="200" cy="200" r="185" fill="url(#seaGrad)"/>
 
-          <!-- islands group (each island gets id and classes) -->
-          <!-- island A (big) -->
+  
           <g id="islandA" transform="translate(70,110)">
             <path d="M80 10 C40 20 10 60 18 98 C26 140 75 160 120 148 C160 138 170 100 150 70 C130 40 100 5 80 10Z"
                   fill="#0b5a3a" />
             <circle cx="50" cy="60" r="8" fill="#2ec76f" opacity="0.85"/>
           </g>
 
-          <!-- island B -->
           <g id="islandB" transform="translate(230,50) scale(.9)">
             <path d="M60 18 C30 22 10 48 16 74 C24 100 54 112 84 100 C110 90 118 62 104 42 C92 26 74 14 60 18Z"
                   fill="#0b5a3a" />
             <circle cx="75" cy="45" r="6" fill="#2ec76f" opacity="0.9"/>
           </g>
 
-          <!-- island C (small) -->
           <g id="islandC" transform="translate(140,250) scale(.85)">
             <path d="M40 8 C20 12 8 30 10 46 C12 66 36 76 56 72 C70 68 76 52 70 40 C62 22 48 6 40 8Z"
                   fill="#0b5a3a"/>
           </g>
 
-          <!-- island D (archipelago) -->
           <g id="islandD" transform="translate(270,230) scale(.7)">
             <path d="M26 6 C12 10 4 18 6 28 C8 36 20 42 32 40 C44 36 50 28 46 20 C40 12 34 6 26 6Z" fill="#0b5a3a"/>
             <path d="M58 18 C48 22 44 28 46 34 C50 44 66 46 76 42 C86 36 90 26 84 20 C76 14 66 12 58 18Z" fill="#0b5a3a"/>
           </g>
 
-          <!-- clouds -->
           <g id="clouds" opacity="0.9">
             <ellipse cx="120" cy="80" rx="36" ry="12" fill="#fff" opacity="0.85"/>
             <ellipse cx="300" cy="110" rx="52" ry="14" fill="#fff" opacity="0.7"/>
             <ellipse cx="210" cy="30" rx="28" ry="8" fill="#fff" opacity="0.6"/>
           </g>
 
-          <!-- cracks overlay -->
           <g id="cracks" opacity="0">
             <path d="M170 70 L190 110 L170 140" stroke="#5a2f2f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
             <path d="M240 140 L210 160 L195 190" stroke="#5a2f2f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
             <path d="M120 230 L140 250 L130 270" stroke="#5a2f2f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
           </g>
 
-          <!-- heal rings -->
           <circle id="healRing" cx="200" cy="200" r="190" fill="none" stroke="rgba(100,220,140,0.08)" stroke-width="20" opacity="0"/>
         </svg>
 
-        <!-- floating leaves (CSS-controlled) -->
 <img src="assets/img/download.png"
      alt=""
      class="leaf"
@@ -219,7 +208,6 @@ Teman-teman Sanbears adalah pengatur bumi, kalian memiliki tanggung jawab untuk 
      style="left:68%; top:14%; width:80px; height:auto;" />
       </div>
 
-      <!-- HUD -->
       <div class="hud" style="width:100%">
         <div class="health-card" style="flex:1">
           <div class="health-label" id="healthPct">80%</div>
@@ -239,7 +227,6 @@ Teman-teman Sanbears adalah pengatur bumi, kalian memiliki tanggung jawab untuk 
     </div>
   </section>
 
-  <!-- RIGHT: ACTIONS, LOG -->
   <aside class="sidebar" aria-label="Kontrol dan Pilihan">
     <div class="controls">
       <div>
@@ -255,7 +242,6 @@ Teman-teman Sanbears adalah pengatur bumi, kalian memiliki tanggung jawab untuk 
     <div class="choice-groups" id="groups">
       <div class="group" aria-live="polite">
         <h4>Positif (Aksi yang baik untuk Bumi)</h4>
-        <!-- actions will be injected here -->
       </div>
       <div class="group">
         <h4>Netral / Ringan (Aksi yang cukup baik untuk Bumi)</h4>
@@ -281,7 +267,6 @@ Teman-teman Sanbears adalah pengatur bumi, kalian memiliki tanggung jawab untuk 
   </aside>
 </div>
 
-<!-- POPUP -->
 <div id="modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div class="modal">
     <h2 id="modalTitle">Eco Alert!</h2>
@@ -295,7 +280,7 @@ Teman-teman Sanbears adalah pengatur bumi, kalian memiliki tanggung jawab untuk 
 
 <script>
 
-let health = 80;         // 0 - 100
+let health = 80;       
 let year = 2025;
 const minH = 0, maxH = 100;
 const log = [];
@@ -361,9 +346,8 @@ function updateEarth(){
   scoreMini.textContent = pct;
   yearEl.textContent = year;
 
-  // island color: healthy green -> unhealthy brown
-  const healthyColor = '#0b5a3a'; // green
-  const unhealthyColor = '#6b4b2b'; // brown
+  const healthyColor = '#0b5a3a';
+  const unhealthyColor = '#6b4b2b';
   const t = pct / 100;
   const color = lerpHex(unhealthyColor, healthyColor, t);
 
@@ -372,9 +356,8 @@ function updateEarth(){
   islandC.setAttribute('fill', color);
   islandD.forEach(p=>p.setAttribute('fill', color));
 
-  // islands size change (simply scale group transform)
-  // bigger when healthy (coastline recovered), shrink when unhealthy
-  const scaleA = 0.8 + 0.6 * (t); // 0.8..1.4
+  
+  const scaleA = 0.8 + 0.6 * (t); 
   const scaleB = 0.75 + 0.5 * (t);
   const scaleC = 0.7 + 0.6 * (t);
   document.getElementById('islandA').setAttribute('transform', `translate(70,110) scale(${scaleA})`);
@@ -382,17 +365,13 @@ function updateEarth(){
   document.getElementById('islandC').setAttribute('transform', `translate(140,250) scale(${scaleC})`);
   document.getElementById('islandD').setAttribute('transform', `translate(270,230) scale(${0.6 + 0.5*t})`);
 
-  // clouds visibility (less clouds when very bad)
   clouds.style.opacity = 0.25 + (t * 0.75);
 
-  // heal ring appears when very healthy
   healRing.style.opacity = t > 0.8 ? 1 : 0;
 
-  // cracks appear when health low
   const crackOpacity = pct < 50 ? Math.min(0.95, (50 - pct) / 50 * 1.2) : 0;
   cracks.style.opacity = crackOpacity;
 
-  // earth scale pulse when critical
   const earthContainer = document.getElementById('earthContainer');
   if (pct < 25) {
     earthContainer.style.transform = 'scale(1.06) rotate(-1deg)';
@@ -402,7 +381,6 @@ function updateEarth(){
     earthContainer.style.transform = 'scale(1)';
   }
 
-  // health bar color shift
   if (pct > 65) {
     healthFill.style.background = 'linear-gradient(90deg,#48e07f,#2ab6d6)';
   } else if (pct > 35) {
@@ -421,11 +399,9 @@ function updateEarth(){
 }
 
 function renderActions(){
-  // groups: the four group divs in order
   const groups = document.querySelectorAll('.group');
   groups.forEach(g => g.querySelectorAll('.action')?.forEach(n=>n.remove())); // clear existing actions
 
-  // group by category
   GROUP_ORDER.forEach((cat, idx) => {
     const container = groups[idx];
     const items = ACTIONS.filter(a=>a.cat===cat);
