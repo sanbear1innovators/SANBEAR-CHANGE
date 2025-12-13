@@ -95,21 +95,119 @@
   <main class="main">
 
     
-    <section id="hero" class="hero section light-background">
+   
 
-      <img src="assets/img/Gambar BG.jpeg" alt="" data-aos="fade-in">
+    <!-- Hero Section -->
+<section id="hero" class="hero section light-background" style="position: relative; overflow: hidden;">
 
-      <div class="container position-relative">
+  <img src="bg.png" 
+       alt="Background"
+       data-aos="fade-in"
+       style="
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+       "
+  >
 
-        
-        <div class="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
-          <h2>WELCOME TO SANBEAR CHANGE</h2>
-          <p align="center">  
-            Young Generations Leading Towards a Sustainable Tomorrow!🫂🌏
-          </p>
-        </div>
+    <!-- psawat -->
+     <img src="plan.png"
+     alt="Flying Plane"
+     style="
+        position: absolute;
+        top: 15px;
+        transform: translateX(100vw); /* MULAI DARI KANAN */
+        width: 250px;
+        height: auto;
+        z-index: 3;
+        animation: rightToLeft 12s linear infinite;
+     "
+     >
 
-        </div>
+
+  <!-- gambar bumi -->
+  <img src="earth.png"
+       alt="Rotating Earth"
+       style="
+        position: absolute;
+        bottom: 0;
+        left: -320px;
+        width: 750px;
+        opacity: 1;
+        z-index: 2;
+        animation: earthMove 12s linear infinite,
+                   earthSpin 6s linear infinite;
+       "
+  >
+
+  <!-- superbear yas -->
+  <img src="super.png" 
+       alt="Floating Mascot" 
+       class="img-fluid"
+       style="
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        transform: translateY(-45%);
+        max-width: 380px;
+        z-index: 4;
+        animation: floatUpDown 4s ease-in-out infinite;
+       "
+  >
+
+  <div class="container position-relative" style="z-index: 5;">
+<div class="welcome glass-bg" data-aos="fade-down" data-aos-delay="100">
+      <div class="title-wrapper">
+      <h2 style="font-weight: 700; font-size: 40px; margin-bottom: 10px;">
+        WELCOME TO SANBEAR CHANGE
+      </h2>
+      </div>
+
+      <p align="center">  
+        Young Generations Leading Towards a Sustainable Tomorrow! 🫂🌏
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- animasi bumi letsgoo -->
+<style>
+@keyframes floatUpDown {
+  0%   { transform: translateY(-50%) translateY(0px); }
+  50%  { transform: translateY(-50%) translateY(-28px); }
+  100% { transform: translateY(-50%) translateY(0px); }
+}
+
+@keyframes earthMove {
+  0%   { left: -320px; }
+  100% { left: 110%; }
+}
+
+@keyframes earthSpin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes shineSweep {
+  from { left: -150%; }
+  to   { left: 150%; }
+}
+
+@keyframes rightToLeft {
+  0% {
+    transform: translateX(100vw); /* Kanan */
+  }
+  100% {
+    transform: translateX(-250px); /* Kiri */
+  }
+}
+
+</style>
+<!-- END OF WELCOME -->
         
         </section>
 
