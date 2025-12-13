@@ -583,7 +583,6 @@ Selain itu, efek rumah kaca diperparah dengan penggundulan hutan yang menyebabka
             border-radius: 10px;
         }
 
-        .popup h3 {
             margin-top: 0;
             color: #4CAF50;
         }
@@ -591,119 +590,471 @@ Selain itu, efek rumah kaca diperparah dengan penggundulan hutan yang menyebabka
 </head>
 <body>
 
-<div class="tab-pane" id="departments-tab-4">
+<!-- Departments Section -->
+
+</section>
+<section id="departments" class="departments section">
+
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Innovation</h2>
+    <p>Here are the issues that was found by Sanbear Tech with the solutions that we found!</p>
+  </div>
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
     <div class="row">
-        <div class="col-lg-8 details order-2 order-lg-1">
-            <h3><b>Innovation</b></h3>
-            <p class="fst-italic">
-                Based on Sanbear Tech's innovators solution, we found a great innovation that could be done as students and citizens worldwide to help our country and overcome problems globally.
-            </p>
-            <button onclick="showPopup('recyper')">Recyper</button>
-            <button onclick="showPopup('plasticTrader')">⭐ Plastic Trader</button>
-        </div>
+      <div class="col-lg-3">
+        <ul class="nav nav-tabs flex-column">
+          <li class="nav-item">
+            <a class="nav-link active show" data-bs-toggle="tab" href="#departments-tab-1"><b>Pengertian </b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-5"><b>Faktor Penyebab 🌍</b></a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-2"><b>Dampak 🤔</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-4"><b>Upaya 🚛</b></a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-9 mt-4 mt-lg-0">
+        <div class="tab-content">
+          
+<div class="tab-pane fade show active" id="departments-tab-1">
+
+  <h3><b>Pengertian</b></h3>
+  <p align="justify">
+    Menurut BMKG (Badan Meteorologi, Klimatologi, dan Geofisika), perubahan iklim atau
+    <i>climate change</i> adalah perubahan jangka panjang dalam pola suhu, curah hujan,
+    dan fenomena cuaca lainnya di Bumi.
+    <br>
+    Menurut United Nations, perubahan iklim mengacu pada perubahan jangka panjang
+    dalam suhu dan pola cuaca.
+  </p>
+
+  <div class="tab1-graph-wrapper">
+    <img src="assets/img/graphh.png" alt="Grafik Perubahan Iklim">
+
+    <div class="tab1-info">
+      <button class="tab1-close">&times;</button>
+      <h5 style="color:#ffffff">📊 Informasi Grafik</h5>
+      <p>
+       Grafik tersebut menunjukkan bahwa kenaikan suhu rata-rata bumi mencapai 1.60C pada setahun tahun terakhir. Hal ini menyebabkan suhu bumi naik mencapai suhu rata-rata 27.50C di Indonesia pada tahun 2024. BMKG mencatat tahun 2024 sebagai tahun dengan suhu tertinggi.
+
+      </p>
     </div>
-</div>
+  </div>
 
-<div class="overlay" id="overlay" onclick="hidePopup()"></div>
+  <small class="tab1-hint">Klik grafik untuk melihat penjelasan</small><br> <small class="tab1-hint">Source: Berkeley Earth</small>
 
-<div class="popup" id="recyperPopup">
-    <h3>Recyper</h3>
-    <p>Recyper stands for "recycle paper," which is the process of turning used paper into new sheets of paper.</p>
-    <p><b>Steps:</b></p>
-    <ol>
-        <li>Collect used paper.</li>
-        <li>Cut the paper into small pieces and place them in a blender.</li>
-        <li>Blend the paper until smooth, then add water and blend again to create a paper pulp. Add color if desired, and blend again until evenly mixed.</li>
-        <li>Mix the paper pulp with water in a basin and stir well.</li>
-        <li>Dip a paper screen into the basin, ensuring an even layer of pulp covers the screen, and then gently lift it out.</li>
-        <li>Use a sponge to press the wet paper sheet onto a towel to remove excess water.</li>
-        <li>Once the paper sheet releases from the screen, let it dry for at least overnight. The finished paper is now ready to use.</li>
-    </ol>
-</div>
-
-<div class="popup" id="plasticTraderPopup">
-    <h3>Plastic Trader</h3>
-    <p>This trash can encourages people to collect and dispose of plastic bottle waste into this machine.</p>
-    <p><b>This machine will:</b></p>
-    <ul>
-        <li>Collect plastic bottle waste that has been separated from the labels and caps.</li>
-        <li>Press the waste into blocks that are easy to move and reprocess.</li>
-    </ul>
-    <p>In return, people can get points for every bottle they throw away, which can be exchanged for eco-friendly merchandise such as cloth shopping bags, tumblers, and lunch boxes.</p>
-
-    <a href="https://www.canva.com/design/DAGcX0f-suk/meFTfW_8TXuHpvACtqDIVA/edit?utm_content=DAGcX0f-suk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="action-btn" target="_blank">Sanbear Tech Innovator's Illustration</a>
-</div>
-
-<style>
-    .action-btn {
-        display: inline-block;
-        background-color: #28a745; 
-        color: white;
-        font-size: 16px;
-        font-weight: bold;
-        padding: 10px 15px;
-        margin: 10px 5px;
-        border: none;
-        border-radius: 8px;
-        text-decoration: none; 
-        text-transform: uppercase;
-        text-align: center;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  <style>
+    #departments-tab-1 .tab1-graph-wrapper {
+      position: relative;
+      max-width: 420px;
+      margin: 20px auto;
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 6px 16px rgba(0,0,0,.15);
+      transition: transform .3s;
     }
 
-    .action-btn:hover {
-        color: white;
-        background-color: #28a745; 
-        box-shadow: 0 0 15px #28a745, 0 0 30px #28a745, 0 0 45px #28a745; 
-        transform: scale(1.05); 
+    #departments-tab-1 .tab1-graph-wrapper:hover {
+      transform: translateY(-4px);
     }
 
-    .action-btn:active {
-        transform: scale(0.98); 
+    #departments-tab-1 .tab1-graph-wrapper img {
+      width: 100%;
+      display: block;
     }
-</style>
 
+    #departments-tab-1 .tab1-info {
+      position: absolute;
+      inset: 0;
+      background: rgba(44,62,80,.95);
+      color: white;
+      padding: 18px;
+      opacity: 0;
+      visibility: hidden;
+      transition: .35s;
+    }
 
+    #departments-tab-1 .tab1-info.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #departments-tab-1 .tab1-close {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    #departments-tab-1 .tab1-hint {
+      display: block;
+      text-align: center;
+      font-style: italic;
+      color: #2c643b;
+    }
+  </style>
 
 <script>
-    function showPopup(type) {
-        document.getElementById('overlay').style.display = 'block';
-        if (type === 'recyper') {
-            document.getElementById('recyperPopup').style.display = 'block';
-        } else if (type === 'plasticTrader') {
-            document.getElementById('plasticTraderPopup').style.display = 'block';
-        }
-    }
+    (function () {
+      const tab = document.getElementById('departments-tab-1');
+      if (!tab) return;
 
-    function hidePopup() {
-        document.getElementById('overlay').style.display = 'none';
-        document.getElementById('recyperPopup').style.display = 'none';
-        document.getElementById('plasticTraderPopup').style.display = 'none';
-    }
-</script>
-</body>
-</html>
+      const box = tab.querySelector('.tab1-graph-wrapper');
+      const info = tab.querySelector('.tab1-info');
+      const close = tab.querySelector('.tab1-close');
 
-                
+      box.addEventListener('click', () => {
+        info.classList.add('active');
+      });
 
-                </p>
-              </div>
-              <div class="col-lg-4 text-center order-1 order-lg-2">
-                <img src="https://i.ytimg.com/vi/J38wWtpD4A4/maxresdefault.jpg" alt="" class="img-fluid">
-              </div>
-            </div>
+      close.addEventListener('click', (e) => {
+        e.stopPropagation();
+        info.classList.remove('active');
+      });
+    })();
+  </script>
+
+</div>
+
+        <div class="tab-pane" id="departments-tab-2">
+  <div class="row">
+    <div class="col-lg-8 details order-2 order-lg-1">
+      <h3><b>Dampak</b></h3>
+      <p class="fst-italic">
+        Selain peningkatan suhu, perubahan iklim menyebabkan rusaknya keseimbangan bumi.
+      <br><b>Klik tombol untuk melihat penjelasan!</b>
+      </p>
+
+      <div class="climate-impact-buttons" style="
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        margin: 25px 0;
+      ">
+        <button class="impact-btn" onclick="showClimateImpact(1)" style="
+          padding: 18px 12px;
+          color: white;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          font-weight: bold;
+          font-size: 0.9rem;
+          text-align: center;
+          min-height: 100px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background: linear-gradient(145deg, #FF6B6B, #FF8E53);
+          box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+        ">
+          <div style="font-size: 1.8rem; margin-bottom: 8px;">🌊</div>
+          <div>BANJIR DAN BENCANA ALAM</div>
+        </button>
+
+        <button class="impact-btn" onclick="showClimateImpact(2)" style="
+          padding: 18px 12px;
+          color: white;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          font-weight: bold;
+          font-size: 0.9rem;
+          text-align: center;
+          min-height: 100px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background: linear-gradient(145deg, #4ECDC4, #44A08D);
+          box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+        ">
+          <div style="font-size: 1.8rem; margin-bottom: 8px;">🚱</div>
+          <div>KEKERINGAN BERKEPANJANGAN</div>
+        </button>
+
+        <button class="impact-btn" onclick="showClimateImpact(3)" style="
+          padding: 18px 12px;
+          color: white;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          font-weight: bold;
+          font-size: 0.9rem;
+          text-align: center;
+          min-height: 100px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background: linear-gradient(145deg, #FFD166, #FF9A3D);
+          box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+        ">
+          <div style="font-size: 1.8rem; margin-bottom: 8px;">🧊</div>
+          <div>MENCAIRNYA ES DI KUTUB</div>
+        </button>
+
+        <button class="impact-btn" onclick="showClimateImpact(4)" style="
+          padding: 18px 12px;
+          color: white;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          font-weight: bold;
+          font-size: 0.9rem;
+          text-align: center;
+          min-height: 100px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background: linear-gradient(145deg, #118AB2, #073B4C);
+          box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+        ">
+          <div style="font-size: 1.8rem; margin-bottom: 8px;">⛓️‍💥</div>
+          <div>KERUSAKAN EKOSISTEM</div>
+        </button>
+
+        <button class="impact-btn" onclick="showClimateImpact(5)" style="
+          padding: 18px 12px;
+          color: white;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          font-weight: bold;
+          font-size: 0.9rem;
+          text-align: center;
+          min-height: 100px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background: linear-gradient(145deg, #9B5DE5, #7209B7);
+          box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+        ">
+          <div style="font-size: 1.8rem; margin-bottom: 8px;">🤒</div>
+          <div>MASALAH KESEHATAN</div>
+        </button>
+
+        <button class="impact-btn" onclick="showClimateImpact(6)" style="
+          padding: 18px 12px;
+          color: white;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          font-weight: bold;
+          font-size: 0.9rem;
+          text-align: center;
+          min-height: 100px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background: linear-gradient(145deg, #06D6A0, #04A777);
+          box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+        ">
+          <div style="font-size: 1.8rem; margin-bottom: 8px;">🔥🌳</div>
+          <div>MENINGKATNYA KEBAKARAN HUTAN</div>
+        </button>
+      </div>
+
+      <div id="climateImpactPopup" style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.7);
+        z-index: 9999;
+      " onclick="closeClimateImpact()">
+        <div style="
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: white;
+          padding: 30px;
+          border-radius: 12px;
+          width: 85%;
+          max-width: 700px;
+          max-height: 80vh;
+          overflow-y: auto;
+          box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        " onclick="event.stopPropagation()">
+          <button onclick="closeClimateImpact()" style="
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #666;
+          ">×</button>
+          
+          <div id="climateImpactContent">
           </div>
-          <div class="tab-pane" id="departments-tab-5">
+        </div>
+      </div>
+
+      <script>
+        const climateImpactData = {
+          1: {
+            title: "🌊 BANJIR DAN BENCANA ALAM",
+            content: `
+              <h2 style="color: #2c3e50; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px;">🌊 BANJIR DAN BENCANA ALAM</h2>
+              <p style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
+                Perubahan iklim menyebabkan curah hujan yang tidak menentu sehingga menyebabkan terjadinya banjir. Selain itu, dengan penebangan hutan yang terjadi memperparah kondisi akibat tidak adanya daerah resapan air. Tidak hanya itu, perubahan iklim menyebabkan terjadinya badai seperti yang terjadi di Vietnam pada akhir November 2025.
+              </p>
+            `
+          },
+          2: {
+            title: "🚱 KEKERINGAN BERKEPANJANGAN",
+            content: `
+              <h2 style="color: #2c3e50; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px;">🚱 KEKERINGAN BERKEPANJANGAN</h2>
+               <p style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
+              Peningkatan suhu menyebabkan kekeringan di berbagai daerah serta iklim tidak menentu menjadi penyebab tidak berjalannya siklus hidrologi. Akibat perubahan iklim, hujan tidak dapat dalam waktu lama sehingga menyebabkan kekeringan.
+              </p>
+            `
+          },
+          3: {
+            title: "🧊 MENCAIRNYA ES KUTUB",
+            content: `
+                <h2 style="color: #2c3e50; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px;">🧊 MENCAIRNYA ES KUTUB</h2>
+                <p style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
+              Perubahan iklim menyebabkan peningkatan suhu bumi dan berdampak pada mencairnya es di kutub. Peningkatan laju hilangnya es global meningkat tajam sejak tahun 2017. Fenomena memanasnya Arktik atau kutub utara disebut sebagai Amplifikasi Arktik. Meningkatnya jumlah es yang mencair menyebabkan naiknya permukaan air laut. Beberapa daerah salah satunya Jakarta mulai mengalami penurunan daratan dibanding laut dan daerah seperti Ancol sudah berada di bawah garis laut. Satu-satunya yang mencegah tenggelamnya Ancol adalah tanggul besar untuk menahan air laut. 
+              </p> 
+            `
+          },
+          4: {
+            title: "⛓️‍💥 KERUSAKAN EKOSISTEM",
+            content: `
+                <h2 style="color: #2c3e50; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px;">⛓️‍💥 KERUSAKAN EKOSISTEM</h2>
+                <p style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">
+              Perubahan iklim menyebabkan peningkatan suhu bumi dan berdampak pada mencairnya es di kutub. Peningkatan laju hilangnya es global meningkat tajam sejak tahun 2017. Fenomena memanasnya Arktik atau kutub utara disebut sebagai Amplifikasi Arktik. Meningkatnya jumlah es yang mencair menyebabkan naiknya permukaan air laut. Beberapa daerah salah satunya Jakarta mulai mengalami penurunan daratan dibanding laut dan daerah seperti Ancol sudah berada di bawah garis laut. Satu-satunya yang mencegah tenggelamnya Ancol adalah tanggul besar untuk menahan air laut. 
+              </p> 
+            `
+          },
+          5: {
+            title: "🤒 MASALAH KESEHATAN",
+            content: `
+              <h2 style="color: #2c3e50; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px;">🤒 MASALAH KESEHATAN</h2>
+               <p style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">Perubahan iklim juga berdampak pada kesehatan manusia. Hal ini ditimbulkan oleh berbagai bencana alam akibat perubahan iklim seperti banjir, kekeringan, dan lainnya yang menyebabkan korban jiwa. Tidak hanya itu, suhu ekstrem menyebabkan adanya gelombang panas seperti pada Oktober hingga November 2025 di Jakarta menyebabkan penyakit pernapasan dan dehidrasi. Selain itu, suhu tinggi mempercepat penyebaran penyakit tertentu seperti DBD dan malaria. Kekeringan juga secara tidak langsung menyebabkan kekurangan suplai air bersih di berbagai daerah seperti Afrika dan Libya mengakibatkan pada menurunnya kualitas kesehatan masyarakat. 
+              </p>
+            `
+          },
+          6: {
+            title: "🔥🌳 MENINGKATNYA KEBAKARAN HUTAN",
+            content: `
+              <h2 style="color: #2c3e50; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px;">🔥🌳 MENINGKATNYA KEBAKARAN HUTAN</h2>
+               <p style="text-align: justify; line-height: 1.6; margin-bottom: 15px;">Kebakaran hutan disebabkan oleh dua hal utama, yaitu kekeringan dan peningkatan suhu. Kedua hal ini adalah dampak dari perubahan iklim. Kekeringan menyebabkan banyak pohon di hutan juga mengalami kekeringan sehingga cenderung lebih mudah terbakar. Seperti pada kasus kebakaran hutan di Los Angeles yang dengan cepat melebar karena kekeringan ekstrem. Tidak hanya itu, perubahan iklim menyebabkan musim kemarau lebih panjang serta meningkatkan kemungkinan kebakaran hutan. Dampak lanjutan dari hal ini adalah terlepasnya gas berbahaya pada atmosfer bumi, memperparah efek rumah kaca, dan menyebabkan perubahan iklim lebih buruk.
+              </p>
+            `
+          }
+        };
+
+        function showClimateImpact(id) {
+          const popup = document.getElementById('climateImpactPopup');
+          const content = document.getElementById('climateImpactContent');
+          
+          if (climateImpactData[id]) {
+            content.innerHTML = climateImpactData[id].content;
+            popup.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+          }
+        }
+
+        function closeClimateImpact() {
+          document.getElementById('climateImpactPopup').style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+
+        document.querySelectorAll('.impact-btn').forEach(btn => {
+          const bgColor = btn.style.background;
+          
+          btn.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px)';
+            this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.25)';
+          });
+          
+          btn.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+            this.style.boxShadow = '0 5px 12px rgba(0,0,0,0.15)';
+          });
+        });
+
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') {
+            closeClimateImpact();
+          }
+        });
+      </script>
+      <style>
+        @media (max-width: 768px) {
+          .climate-impact-buttons {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 12px !important;
+          }
+          
+          .impact-btn {
+            min-height: 90px !important;
+            padding: 15px 10px !important;
+            font-size: 0.8rem !important;
+          }
+          
+          .impact-btn div:first-child {
+            font-size: 1.5rem !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .climate-impact-buttons {
+            grid-template-columns: 1fr !important;
+          }
+          
+          #climateImpactPopup div {
+            width: 95% !important;
+            padding: 20px !important;
+          }
+        }
+      </style>
+
+    </div>
+    <div class="col-lg-4 text-center order-1 order-lg-2">
+      <img src="assets/img/cli.jpeg" alt="" class="img-fluid">
+    </div>
+  </div>
+</div>
+         
+         <!--TAB INI GA KEPAKE DAN GABOLEH DIAPUS YA -sheva -->
+          <div class="tab-pane" id="departments-tab-3">
             <div class="row">
               <div class="col-lg-8 details order-2 order-lg-1">
-                <h3><b><p align=center><font color=green>EcoSTEM</font></p></b></h3>
-                <br>
-                <p align=justify>EcoSTEM is an <mark>integration between Science, Technology, Engineering, and Mathematics education</mark> with an <mark>emphasis on environmental sustainability</mark>. By blending STEM fields with environmental concerns, ecoSTEM has a goal to inspire people to explore how science and technology can be used to address environmental challenges, promote sustainability and create innovative solutions to protect our planet.</p>
-                
-                Sanbear Tech Innovators have researched and concluded some useful information that is associated with EcoStem. All of the informations are available on these buttons:
-        <br>
-                        <!DOCTYPE html>
+                <h3><b>Dampak </b></h3>
+                <p class="fst-italic">
+                  Selain peningkatan suhu, perubahan iklim menyebabkan rusaknya keseimbangan bumi. 
+                </p>
+                <p>
+                <!DOCTYPE html>
               <html lang="en">
               <head>
                   <meta charset="UTF-8">
@@ -751,9 +1102,7 @@ Selain itu, efek rumah kaca diperparah dengan penggundulan hutan yang menyebabka
                       left: 50%; 
                       transform: translate(-50%, -50%); 
                       }
-
-                      }
-              
+            
                       .close-btn {
                           color: #aaa;
                           font-size: 30px;
@@ -783,12 +1132,12 @@ Selain itu, efek rumah kaca diperparah dengan penggundulan hutan yang menyebabka
               </head>
               <body>
               
-                  <button class="compost-btn" onclick="toggleCompostPopup()">🌿 Organic Waste</button>
+                  <button class="compost-btn" onclick="toggleCompostPopup()">Klik untuk Dampak</button>
               
                   <div id="compostPopup" class="compost-popup" onclick="closePopup(event)">
                       <div class="compost-popup-content">
                           <span class="close-btn" onclick="toggleCompostPopup()">×</span>
-                          <h2>Organic Waste</h2>
+                          <h2>Dampak ⁉️</h2>
                         <p align="justify">Organic waste comes from living organisms such as humans, animals, and plants. It is biodegradable and can break down naturally. This type of waste is environmentally friendly and can be recycled into useful products. Examples include food scraps, vegetable leftovers, fruit peels, seeds, animal waste, and animal carcasses.</p>
                         Organic waste is further divided into two types:
                         <ol>
@@ -853,301 +1202,343 @@ Selain itu, efek rumah kaca diperparah dengan penggundulan hutan yang menyebabka
               
               </body>
               </html>
-              
-              <!DOCTYPE html>
+                </p>
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1R3ewYACCnNw0aMSHQcJZI9gNfnXhLYSh6A&s" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="tab-pane" id="departments-tab-4">
+            <div class="row">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <p>
+                  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waste Impact and Management</title>
+    <title>Innovation Section</title>
     <style>
-        .info-btn {
-            padding: 15px 30px;
+        body {
+            font-family: Poppins;
+        }
+
+        button {
+            background-color: #4CAF50; 
             color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 10px 0;
             border: none;
-            border-radius: 30px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            text-transform: uppercase;
             font-weight: bold;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
         }
 
-        .info-btn:hover {
-            opacity: 0.9;
-        }
-
-        .organic-btn {
-            background-color: #ff6347; 
-        }
-
-        .organic-btn:hover {
-            background-color: #e53e30;
-        }
-
-       .inorganic-btn {
-            background-color: #ff8c00; 
-        }
-
-        .inorganic-btn:hover {
-            background-color: #e76a1f;
-        }
-    
-       .hazardous-btn {
-        background-color: #28a745; 
-       }
-
-        .hazardous-btn:hover {
-        background-color: #218838;
-        }
-      
-        .laws-btn {
-            background-color: #ffeb3b; 
-            color: black; 
-        }
-
-        .laws-btn:hover {
-            background-color: #fcd700;
-        }
-
-        .info-popup {
-            display: none; 
-            position: fixed;
-            z-index: 1; 
-            left: 0;
+        button::after {
+            content: '';
+            position: absolute;
             top: 0;
-          
-</body>
-</html>
-
-
-
-   <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Statistics Popup with Chart</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-    <style>
-        .info-popup {
-            display: none; 
-            position: fixed;
-            z-index: 1; 
             left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 8px;
+            background: radial-gradient(circle, rgba(72, 239, 128, 0.4), transparent);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        button:hover::after {
+            opacity: 1;
+        }
+
+        button:hover {
+            box-shadow: 0 0 15px #4CAF50, 0 0 30px #4CAF50;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
-            padding-top: 60px;
+            z-index: 999;
         }
 
-        .info-popup-content {
-            background-color: #fff;
-            margin: auto;
-            padding: 20px;
-            border-radius: 10px;
-            width: 60%;
-            max-width: 600px;
-            position: relative;
-        }
-
-        .close-btn {
-            color: #aaa;
-            font-size: 30px;
-            font-weight: bold;
-            position: absolute;
-            top: 10px;
-            right: 25px;
-        }
-
-        .close-btn:hover,
-        .close-btn:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        h2 {
-            text-align: center;
-            color: #359933;
-        }
-
-        .show-statistics-btn {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            background-color: #2db44a;
-            color: white;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .show-statistics-btn:hover {
-            background-color: #1e9e33;
-        }
-    </style>
-</head>
-<body>
- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Statistics Popup with Chart</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-    <style>
-        .info-popup {
-            display: none; 
+        .popup {
+            display: none;
             position: fixed;
-            z-index: 1; 
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); 
-            padding-top: 60px;
-        }
-
-        .info-popup-content {
-            background-color: #fff;
-            margin: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
             padding: 20px;
+            border: 2px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
             border-radius: 10px;
-            width: 60%;
-            max-width: 600px;
-            position: relative;
         }
 
-        .close-btn {
-            color: #aaa;
-            font-size: 30px;
-            font-weight: bold;
-            position: absolute;
-            top: 10px;
-            right: 25px;
-        }
-
-        .close-btn:hover,
-        .close-btn:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        h2 {
-            text-align: center;
-            color: #359933;
-        }
-
-     
-        .show-statistics-btn {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            background-color: #2db44a;
-            color: white;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .show-statistics-btn:hover {
-            background-color: #1e9e33;
+        .popup h3 {
+            margin-top: 0;
+            color: #4CAF50;
         }
     </style>
 </head>
 <body>
-  
-    <div id="lawsWastePopup" class="info-popup" onclick="closePopup(event)">
-        <div class="info-popup-content">
-            <span class="close-btn" onclick="toggleInfoPopup('lawsWaste')">×</span>
-            <h2> Countries that Contribute the Most Waste in the World</h2> <p align="center"><i>According to Databoks and World Bank Report</i></p><p align="center"><i>Please scroll down and click the 'Show Statistics' button </i></p>
-            <canvas id="lawsChart" style="width:100%;max-width:600px"></canvas>
 
-            <button class="show-statistics-btn" onclick="showLawsStatistics()">Show Statistics</button>
+<div class="tab-pane" id="departments-tab-4">
+    <div class="row">
+        <div class="col-lg-8 details order-2 order-lg-1">
+            <h3><b>Upaya & Solusi</b></h3>
+            <p class="fst-italic" p style="text-align: justify;">
+            Masalah ini sudah disoroti oleh banyak negara di dunia termasuk Perserikatan Bangsa-Bangsa (PBB) melalui United Nations Framework Convention on Climate Change (UNFCCC) atau Konvensi Kerangka Kerja PBB terkait Perubahan Iklim. Kovensi ini sudah dibentuk sejak 1992 kemudian disusul oleh berbagai konvensi lainnya sebagai upaya pengurangan perubahan iklim terutama secara internasional dengan kerja sama berbagai bangsa.
+            </p>
+            <button onclick="showPopup('recyper')">⭐ Solusi</button>
+            <button onclick="showPopup('plasticTrader')">⭐ Inovasi</button>
         </div>
     </div>
+</div>
 
-    <script>
-        function toggleInfoPopup(popupId) {
-            const popup = document.getElementById(popupId + 'Popup');
-            popup.style.display = (popup.style.display === "none" || popup.style.display === "") ? "block" : "none";
-        }
+<div class="overlay" id="overlay" onclick="hidePopup()"></div>
 
-        function closePopup(event) {
-            const popups = ['organicHealthPopup', 'inorganicWastePopup', 'b3WastePopup', 'lawsWastePopup'];
-            if (popups.includes(event.target.id)) {
-                toggleInfoPopup(event.target.id.replace('Popup', ''));
-            }
-        }
+<div class="popup" id="recyperPopup">
+    <h3>What Can We Do?</h3>
+    <p>Sebagai generasi muda, kita harus bisa sadar dan ikut andil dalam menyelesaikan permasalahan Climate Change ini. Kita dapat membantu membawa perubahan melalui berbagai hal sederhana dalam kehidupan sehari-hari seperti: </p>
+    <ol>
+      <li><b>Kurangi Penggunaan Energi Listrik Berlebih</b></li>
+      <ul>
+      <li>Menggunakan lampu LED yang hemat energi</li>
+    <li>Mematikan lampu, AC, kipas angin, dan perangkat elektronik saat tidak digunakan</li>
+    </ul>
+      <li><b>Gunakan Transportasi Ramah Lingkungan</b></li>
+      <ul>
+      <li>Gunakan KRL, MRT, Transjakarta, dsb.</li>
+      <li>Berjalan kaki/bersepeda untuk jarak dekat</li>
+    </ul>
+      <li><b>Menanam Pohon dan Merawat Tumbuhan</b></li>
+      <ul>
+      <li>Pohon menyerap CO2 dan melepas O2</li>
+    </ul>
+      <li><b>Menggunakan Energi Terbarukan</b></li>
+      <ul>
+      <li>Sebagian besar listrik dihasilkan dari pembakaran bahan fosil yang melepaskan gas rumah kaca dan memicu perubahan iklim.</li>
+      <li>Pasang panel surya untuk kebutuhan listrik rumah tangga.</li>
+      <li><i>dan masih banyak lagi...</i></li>
+    </ul>
 
-        function formatNumberWithCommasAndDecimals(number) {
-            return number.toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
-        }
+    </ol>
+</div>
 
-        function showLawsStatistics() {
-            const dataValues = [395.1, 265.2, 189.8, 79.1, 65.2]; 
-            const ctx = document.getElementById('lawsChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['China', 'USA', 'India', 'Brazil', 'Indonesia'], 
-                    datasets: [{
-                        label: 'Waste (million tons)',
-                        data: dataValues,
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(255, 159, 64, 0.2)',
-                            'rgba(255, 205, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgb(255, 99, 132)',
-                            'rgb(255, 159, 64)',
-                            'rgb(255, 205, 86)',
-                            'rgb(75, 192, 192)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            ticks: {
-                                callback: function(value) {
-                                    return formatNumberWithCommasAndDecimals(value);
-                                }
-                            }
-                        }
-                    }
-                }
-            });
+<div class="popup" id="plasticTraderPopup">
+    <h3> 🧱 Batu Bata dari Agricultural Waste</h3>
+    <p>Batu bata berbahan agricultural waste memanfaatkan limbah pertanian seperti sekam padi, ampas tebu, dan batang jagung sebagai bahan campuran. Limbah ini diolah dan dicampur dengan tanah liat atau semen, lalu dicetak menjadi batu bata ramah lingkungan.</p>
+    <P>Dalam proses pembuatannya, limbah pertanian diolah terlebih dahulu (dikeringkan dan dibakar menjadi abu atau dicacah halus), lalu dicampurkan dengan tanah liat atau bahan pengikat seperti semen. Campuran ini kemudian dicetak menjadi bata dan dikeringkan, baik melalui pembakaran bersuhu rendah maupun metode tanpa pembakaran (non-fired bricks).</P>
+    <p><b>Inovasi ini membantu mengurangi limbah pertanian, menurunkan emisi karbon, dan menghasilkan material bangunan yang lebih ringan serta berkelanjutan</b></p>
+   
+
+    <a href="https://www.canva.com/design/DAG7ZZcajt8/vY7XHCgSYKp8Lg8utnEj7A/view?utm_content=DAG7ZZcajt8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hfd363a9a6c" class="action-btn" target="_blank">Sanbear Tech Innovator's Illustration</a>
+</div>
+
+<style>
+    .action-btn {
+        display: inline-block;
+        background-color: #28a745; 
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px 15px;
+        margin: 10px 5px;
+        border: none;
+        border-radius: 8px;
+        text-decoration: none; 
+        text-transform: uppercase;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .action-btn:hover {
+        color: white;
+        background-color: #28a745; 
+        box-shadow: 0 0 15px #28a745, 0 0 30px #28a745, 0 0 45px #28a745; 
+        transform: scale(1.05); 
+    }
+
+    .action-btn:active {
+        transform: scale(0.98); 
+    }
+</style>
+
+
+
+<script>
+    function showPopup(type) {
+        document.getElementById('overlay').style.display = 'block';
+        if (type === 'recyper') {
+            document.getElementById('recyperPopup').style.display = 'block';
+        } else if (type === 'plasticTrader') {
+            document.getElementById('plasticTraderPopup').style.display = 'block';
         }
-    </script>
+    }
+
+    function hidePopup() {
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('recyperPopup').style.display = 'none';
+        document.getElementById('plasticTraderPopup').style.display = 'none';
+    }
+</script>
 </body>
 </html>
 
+                
 
+                </p>
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="https://i.ytimg.com/vi/J38wWtpD4A4/maxresdefault.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="departments-tab-5">
+  <div style="width: 100%; padding: 0;">
+    <h3 style="color:#2c643b; margin-bottom: 10px; font-weight: 600;"><b>Faktor Penyebab</b></h3>
+        
+    <p style="text-align: justify; margin-bottom: 20px;">
+      Artikel dari <u>United Nations</u> menunjukkan bahwa perubahan iklim sudah terjadi sejak tahun <mark>1800an</mark> loh! Perubahan iklim pertama disebabkan karena perubahan dalam pola aktivitas manusia terutama akibat pembakaran bahan bakar fosil seperti <b>batu bara, minyak bumi, dan gas alam.</b>
+    </p>
+    
+    <p style="text-align: justify; margin-bottom: 20px;">
+Secara umum, perubahan iklim ini disebabkan oleh aktivitas manusia sendiri yang memperparah fenomena <mark>efek gas rumah kaca</mark>. Efek rumah kaca ini terbentuk pada lapisan troposfer bumi. <u>Menurut NASA</u>, efek rumah kaca sebenarnya berperan penting dalam menjaga suhu bumi tetap stabil, tetapi dengan meningkatnya efek tersebut menyebabkan <b>suhu berlebih terperangkap di dalam bumi.</b>
+    </p>
+    <p><b>Berikut adalah beberapa gas yang memperparah efek rumah kaca:</b> <i>Hover untuk informasi lengkap</i></p>
+    <style>
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 100%;
+      }
 
-    <script>
-        function toggleInfoPopup(popupId) {
-            const popup = document.getElementById(popupId + 'Popup');
-            popup.style.display = (popup.style.display === "none" || popup.style.display === "") ? "block" : "none";
+      .flip-card {
+        background-color: transparent;
+        width: 100%;
+        height: 200px;
+        perspective: 1000px;
+      }
+
+      /* info */
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.7s;
+        transform-style: preserve-3d;
+      }
+
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 18px;
+        box-sizing: border-box;
+      }
+
+      .flip-card-front {
+        background: #e1ffe8;
+        border-left: 6px solid #3cb371;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .flip-card-back {
+        background: #f5fdf5;
+        border-left: 6px solid #2e7d32;
+        transform: rotateY(180deg);
+        text-align: left;
+        font-size: 15px;
+        line-height: 1.4;
+      }
+
+      @media(max-width: 900px) {
+        .card-grid {
+          grid-template-columns: repeat(2, 1fr);
         }
-
-        function closePopup(event) {
-            if (event.target === document.getElementById('organicHealthPopup') || event.target === document.getElementById('inorganicWastePopup') || event.target === document.getElementById('b3WastePopup') || event.target === document.getElementById('lawsWastePopup')) {
-                toggleInfoPopup(event.target.id.replace('Popup', ''));
-            }
+      }
+      @media(max-width: 600px) {
+        .card-grid {
+          grid-template-columns: 1fr;
         }
-    </script>
+      }
+    </style>
 
-</body>
-</html>
+    <div class="card-grid">
+      <!-- 1 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">Karbon Dioksida (CO2)</div>
+          <div class="flip-card-back">
+            <p style="text-align: justify"> Gas yang paling banyak diproduksi dalam kehidupan sehari-hari. Bahkan dalam bernapas, kita menghasilkan CO2 sebagai gas sisa metabolisme.
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">Metana (CH4)</div>
+          <div class="flip-card-back">
+             <p style="text-align: justify">Gas tidak berwarna dan tidak berbau. Terbentuk dari aktivitas mikroorganisme seperti proses pembusukan bahan organik. Salah satu penghasil terbesar gas ini adalah hasil feses hewan, bahkan kentut manusia!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">Nitrous Oksida (N2O)</div>
+          <div class="flip-card-back">
+              <p style="text-align: justify">Diproduksi dari kegiatan pertanian dan peternakan yang dilepaskan oleh pupuk organik. Sektor pertanian berkontribusi hingga 74% dari total emisi antropogenik dalam beberapa dekade terakhir. N2O juga diproduksi dari pembakaran bahan bakar fosil yang meningkat hingga 18% dalam 100 tahun terakhir.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">Chlorofluorocarbon (CFC)</div>
+          <div class="flip-card-back">
+            <p style="text-align: justify">Mampu memerangkap panas dengan sangat baik dan memiliki masa hidup dari 100-640 tahun tergantung jenisnya. Gas ini sangat berbahaya dan berpotensi menyebabkan pemanasan global lebih tinggi. Dahulu, CFC digunakan dalam aerosol dan pendingin ruangan. Akan tetapi, sekarang dihentikan secara internasional untuk mencegah pemanasan global yang lebih parah.</p>
+          </div>
+        </div>
+      </div>
+
+      
+      </div>
+    </div>
+  </div>
+</div>
 
                 
 <div class="col-lg-4 text-center order-1 order-lg-2">
@@ -1162,6 +1553,8 @@ Selain itu, efek rumah kaca diperparah dengan penggundulan hutan yang menyebabka
   </div>
 
 </section>
+  .popup h3 {
+ 
   <section id="stats" class="stats section light-background">
           <div class="container" data-aos="fade-up" data-aos-delay="100">
         
