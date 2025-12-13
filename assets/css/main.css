@@ -1534,11 +1534,8 @@ section,
   position: relative;
   padding: 25px 40px;
   border-radius: 18px;
-
-  /* NO BLUR, NO GLASS — totally clear */
   background: rgba(255, 255, 255, 0); 
   border: none;
-
   overflow: hidden;
 }
 
@@ -1598,10 +1595,8 @@ section,
     radial-gradient(circle, rgba(255,255,255,0.60) 0%, transparent 70%) 60% 70%,
     radial-gradient(circle, rgba(255,255,255,0.55) 0%, transparent 70%) 35% 80%,
     radial-gradient(circle, rgba(255,255,255,0.85) 0%, transparent 70%) 50% 10%;
-
   background-size: 6px 6px, 4px 4px, 5px 5px, 4px 4px, 7px 7px;
   background-repeat: no-repeat;
-
   pointer-events: none;
   z-index: 1;
 }
@@ -1627,7 +1622,6 @@ section,
   text-shadow: 
     2.3px 2.3px 5px #000000, 
     5px 5px 70px rgba(255,255,255,0.5);
-
 }
 
 .hero .content {
