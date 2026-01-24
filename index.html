@@ -2405,41 +2405,9 @@ window.addEventListener("resize",()=>{
   });
 </script>
 <style>
-  /* Hide default Chatway button */
   #chatway-launcher {
     display: none !important;
   }
-
-  .chat-btn {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-
-    width: 55px;
-    height: 55px;
-
-    background: #222;
-    color: #fff;
-
-    border-radius: 50%;
-    font-size: 24px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    cursor: pointer;
-    z-index: 9999;
-
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    transition: transform 0.2s ease, background 0.2s ease;
-  }
-
-  .chat-btn:hover {
-    background: #444;
-    transform: scale(1.05);
-  }
-
   @media (max-width: 600px) {
     .chat-btn {
       width: 48px;
@@ -2450,7 +2418,6 @@ window.addEventListener("resize",()=>{
 </style>
 
 <div id="custom-chat-btn" class="chat-btn" aria-label="Open AI Chat">
-  🤖
 </div>
 
 <script
