@@ -2350,7 +2350,60 @@ window.addEventListener("resize",()=>{
 
   </footer>
 
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<!-- SCROLL TO TOP BUTTON (BOTTOM LEFT) -->
+<style>
+  .scroll-top {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;      /* posisi kiri */
+    right: auto;
+
+    width: 44px;
+    height: 44px;
+
+    background: #000;
+    color: #fff;
+    border-radius: 50%;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    z-index: 999;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .scroll-top:hover {
+    background: #444;
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 600px) {
+    .scroll-top {
+      width: 40px;
+      height: 40px;
+    }
+  }
+</style>
+
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+  <i class="bi bi-arrow-up-short"></i>
+</a>
+
+<script>
+  const scrollTopBtn = document.getElementById("scroll-top");
+
+  window.addEventListener("scroll", () => {
+    scrollTopBtn.style.display =
+      window.scrollY > 300 ? "flex" : "none";
+  });
+
+  scrollTopBtn.addEventListener("click", e => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
 <style>
   /* Hide default Chatway button */
   #chatway-launcher {
