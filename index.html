@@ -196,22 +196,21 @@
   }
 }
 
-/* MOBILE: HIDE EARTH & BEAR, KEEP PLANE */
+/* buat di hape */
 @media (max-width: 768px) {
-    /* Sembunyikan Earth dan Bear di mobile */
     #hero img[src="earth.png"],
     #hero img[src="super.png"] {
         display: none !important;
     }
     
-    /* Tetap tampilkan Plane di mobile */
+    /* Plane tetep ada */
     #hero img[src="plan.png"] {
         display: block !important;
         animation: rightToLeft 12s linear infinite !important;
     }
 }
 
-/* DESKTOP: Tampilkan semua */
+/* laptop: semua */
 @media (min-width: 769px) {
     #hero img[src="earth.png"],
     #hero img[src="super.png"],
