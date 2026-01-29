@@ -191,10 +191,10 @@
 
 @keyframes rightToLeft {
   0% {
-    transform: translateX(100vw); /* Kanan */
+    transform: translateX(100vw); 
   }
   100% {
-    transform: translateX(-250px); /* Kiri */
+    transform: translateX(-250px); 
   }
 }
 
@@ -225,12 +225,11 @@
         
         </section>
 
-    <section id="about" class="about section" style="position: relative; overflow: hidden; height: 600px; background: #345c39; display: flex; align-items: center; justify-content: center;">
+    <section id="about" class="about section" style="position: relative; overflow: hidden; height: 600px; background: linear-gradient(180deg, #bcd38e , #345c39); display: flex; align-items: center; justify-content: center;">
   
-  <!-- Canvas background -->
+  <!-- canvas background -->
   <canvas id="trigCanvas" style="position:absolute; top:0; left:0; width:100%; height:100%;"></canvas>
   
-  <!-- Video container -->
    <div style="position: relative; z-index: 2; width: 80%; max-width: 900px; aspect-ratio: 16/9; border-radius: 15px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.5);">
   <iframe 
     src="https://drive.google.com/file/d/1pdKty8yF90R4r4UHmmAIl97vu07Pgxfp/preview" 
@@ -245,7 +244,7 @@
 </section>
 
 <script>
-// ---------- Canvas Animation ----------
+// ---------- animation ----------
 const canvas = document.getElementById('trigCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -281,7 +280,6 @@ function draw() {
     ctx.stroke();
   }
 
-  // Draw floating symbols
   floatingSymbols.forEach(sym => {
     ctx.fillStyle = `rgba(255,255,255,0.25)`;
     ctx.font = `${sym.fontSize}px Poppins, sans-serif`;
