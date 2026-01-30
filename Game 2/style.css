@@ -23,7 +23,7 @@ body{
 
 .quiz-app-wrapper {
     width: 100%;
-    max-width: 500px;
+    max-width: 250px;
     justify-content: center;
     align-items: center;
 }
