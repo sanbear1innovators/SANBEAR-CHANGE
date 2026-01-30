@@ -154,7 +154,7 @@
             const loginForm = document.getElementById("login-form");
             const signupForm = document.getElementById("signup-form");
 
-            // Toggle between login and signup
+            
             loginBtn.addEventListener("click", () => {
                 loginForm.classList.add("active");
                 signupForm.classList.remove("active");
@@ -165,7 +165,7 @@
                 loginForm.classList.remove("active");
             });
 
-            // ✅ Redirect to index.html on login
+            
             loginForm.addEventListener("submit", (e) => {
                 e.preventDefault();
                 const email = document.getElementById("login-email").value.trim();
