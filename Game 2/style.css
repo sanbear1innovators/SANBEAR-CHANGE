@@ -124,7 +124,6 @@ body{
     
 .quiz-container{
     display: none;
-    width: 480px;
 }
 
 .quiz-container .quiz-header{
@@ -233,7 +232,6 @@ body{
     display: none;
     text-align: center;
     padding: 40px;
-    width: 410px;
 }
 
 .result-container .result-img{
