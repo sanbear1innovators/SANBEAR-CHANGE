@@ -14,7 +14,6 @@
 body{
     font-family: 'Poppins', 'Poppins";
     display: flex;
-    padding: 15px;
     align-items: center;
     justify-content: center;
      background-image: linear-gradient(#09637E, #7AB2B2);    
@@ -113,6 +112,13 @@ body{
 .result-container .try-again-btn:hover{
     background: rgb(26 26 133);
 }
+
+.quiz-app-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 
 .quiz-container{
     display: none;
