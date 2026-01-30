@@ -6,29 +6,31 @@
 }
 
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Poppins",  sans-serif;
-  --nav-font: "Raleway",  sans-serif;
+    --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --heading-font: "Poppins", sans-serif;
+    --nav-font: "Raleway", sans-serif;
+}
 }
 
 body{
-    font-family: 'Poppins', 'Poppins";
+    font-family: 'Poppins', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
-     background-image: linear-gradient(#09637E, #7AB2B2);    
-     min-height: 100vh;
+    background-image: linear-gradient(#09637E, #7AB2B2);    
+    min-height: 100vh;
+    padding: 20px;
 }
 
 :where(.config-container, .quiz-container, .result-container){
     background: white;
     border-radius: 8px;
     box-shadow:  0 10px 25px rgba(0,0,0,0.13);
+    width: 100%;
 }
 
 .config-container{
     display: block;
-    width: 415px;
     padding: 25px;
     text-align: center;
 }
@@ -115,11 +117,12 @@ body{
 
 .quiz-app-wrapper {
     width: 100%;
+    max-width: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-
+}
+    
 .quiz-container{
     display: none;
     width: 480px;
