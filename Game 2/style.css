@@ -24,7 +24,6 @@ body{
 .quiz-app-wrapper {
     width: 100%;
     max-width: 500px;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -140,7 +139,6 @@ body{
 }
 
 .quiz-header .quiz-timer{
-    display: flex;
     width: 70px;
     color: white;
     display: flex;
