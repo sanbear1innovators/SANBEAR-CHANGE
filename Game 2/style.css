@@ -11,8 +11,8 @@ body{
     padding: 15px;
     align-items: center;
     justify-content: center;
-    background-image: url (https://thumbs.dreamstime.com/b/ai-generated-stunning-arctic-landscape-breaking-glaciers-sunset-stunning-arctic-landscape-breaking-glaciers-sunset-371620774.jpg);
-    min-height: 100vh;
+     background-image: linear-gradient(#09637E, #7AB2B2);    
+     min-height: 100vh;
 }
 
 :where(.config-container, .quiz-container, .result-container){
