@@ -1393,8 +1393,64 @@ Secara umum, perubahan iklim ini disebabkan oleh aktivitas manusia sendiri yang 
           </div>
         
         </section>
-    <section id="featured-properties" class="featured-properties section">
+    
+<!--artikel sectionn yass -->
+<section id="featured-properties" class="featured-properties section"
+  style="
+    position: relative;
+    overflow: hidden;
+    background:#d8efff;
+  ">
+  <span style="
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: rgba(0,153,255,0.35);
+    top: 10%;
+    left: 8%;
+    border-radius: 50%;
+    animation: bubbleFloat 14s ease-in-out infinite;
+  "></span>
+  <span style="
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(255,255,255,0.7);
+    top: 50%;
+    left: 5%;
+    border-radius: 50%;
+    animation: bubbleFloat 10s ease-in-out infinite reverse;
+  "></span>
+  <span style="
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(0,180,255,0.25);
+    top: 20%;
+    right: -120px;
+    border-radius: 40% 60% 55% 45%;
+    animation: blobMove 18s ease-in-out infinite;
+  "></span>
 
+  <span style="
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgb(225, 246, 255);
+    top: 70%;
+    right: 90px;
+    border-radius: 40% 60% 55% 45%;
+    animation: bubbleFloat 10s ease-in-out infinite reverse;
+  "></span>
+
+  <div style="
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(0,123,255,0.15) 1px, transparent 1px);
+    background-size: 26px 26px;
+    opacity: 0.5;
+  "></div>
+  
       <div class="container section-title" data-aos="fade-up">
         <h2>ARTIKEL SANBEAR 📰</h2>
         <p> 
@@ -1461,9 +1517,26 @@ Pada bagian ini, kami akan menampilkan artikel berisikan informasi seputar perma
           </div>
 
         </div>
-
-
+          <style>
+        @keyframes bubbleFloat {
+          0%   { transform: translateY(0) scale(1); }
+          50%  { transform: translateY(-80px) scale(1.1); }
+          100% { transform: translateY(0) scale(1); }
+        }
+        
+        @keyframes blobMove {
+          0%   { transform: rotate(0deg) translateY(0); }
+          50%  { transform: rotate(12deg) translateY(-40px); }
+          100% { transform: rotate(0deg) translateY(0); }
+        }
+        
+        #featured-properties:hover span {
+          animation-play-state: running;
+          filter: brightness(1.1);
+        }
+        </style>
     </section>
+    
  <!-- Faq Section -->
     <section id="faq" class="faq section light-background">
 
