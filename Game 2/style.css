@@ -11,8 +11,8 @@ body{
     padding: 15px;
     align-items: center;
     justify-content: center;
+    background-image: url (bgggg.png);
     min-height: 100vh;
-    background-image:image(bgggg.png);
 }
 
 :where(.config-container, .quiz-container, .result-container){
