@@ -10,7 +10,6 @@
     --heading-font: "Poppins", sans-serif;
     --nav-font: "Raleway", sans-serif;
 }
-}
 
 body{
     font-family: 'Poppins', sans-serif;
@@ -20,6 +19,14 @@ body{
     background-image: linear-gradient(#09637E, #7AB2B2);    
     min-height: 100vh;
     padding: 20px;
+}
+
+.quiz-app-wrapper {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 :where(.config-container, .quiz-container, .result-container){
@@ -113,14 +120,6 @@ body{
 .quiz-footer .next-question-btn:hover,
 .result-container .try-again-btn:hover{
     background: rgb(26 26 133);
-}
-
-.quiz-app-wrapper {
-    width: 100%;
-    max-width: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
     
 .quiz-container{
