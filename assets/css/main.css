@@ -180,7 +180,59 @@ h6 {
   color: #4CAF50;
   margin-top: 20px;
 }
+/* Pastikan navmenu responsive */
+.navmenu {
+  display: flex;
+}
 
+/* Mobile styles */
+@media (max-width: 1199px) {
+  .mobile-nav-toggle {
+    display: block !important;
+    cursor: pointer;
+    font-size: 28px;
+    z-index: 9999;
+  }
+  
+  .navmenu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background: white;
+    padding: 60px 20px;
+    transition: 0.5s;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    z-index: 9998;
+    overflow-y: auto;
+  }
+  
+  .navmenu.active {
+    right: 0;
+  }
+  
+  .navmenu ul {
+    flex-direction: column;
+  }
+  
+  .navmenu .dropdown ul {
+    position: static;
+    display: none;
+    margin-left: 15px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1200px) {
+  .mobile-nav-toggle {
+    display: none !important;
+  }
+  
+  .navmenu .dropdown:hover > ul {
+    display: block;
+  }
+}
 .header {
   color: var(--default-color);
   transition: all 0.5s;
