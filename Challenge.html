@@ -97,296 +97,285 @@
 
   <main class="main">
        
-  <!-- SANBEAR CHALLENGE -->
-  <section id="eco-hero">
-    <div class="eco-hero-container">
-      <div class="eco-hero-header">
-        <h1><b><font color=#1560BD>Sanbear Change</font> <span style="color: #1d426c">Challenge</span></b></h1>
-        <p class="header-subtitle"><font color=#1560BD>Bantu Sanbear menyelesaikan misi dan lindungi bumi kita!</font></p>
-      
-  
-    <!-- 💳 SANBEAR DIGITAL WALLET -->
-<div class="wallet-card">
-  <div class="wallet-header">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg">
-    <span>Sanbear Digital Wallet</span>
-  </div>
+    <!-- Hero Section -->
+    <section style="text-align: center; padding: 40px 0;">
+      <h1 style="color: #085174; font-size: 2.5rem; margin-bottom: 10px;">
+        Be The Next Sanbear Hero!
+      </h1>
+      <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+        Bantu Sanbear selesaikan tugasnya, kumpulkan poin, dan naikkan peringkat leaderboard!
+      </p>
+    </section>
 
-  <div class="wallet-balance">
-    Rp <span id="walletAmount">10.000</span>
-  </div>
+    <!-- Missions -->
+    <section>
+      <h2 style="color: #1560BD; text-align: center; margin-bottom: 30px;">
+        <i class="fas fa-tasks"></i> Sanbear's To Do List
+      </h2>
 
-  <div class="wallet-owner">
-    a.n <strong>Sanbear Changer</strong>
-  </div>
-</div>
-
-<section>
-  <div class="missions-container">
-    <h2><i class="fa-solid fa-clipboard-check"></i> Sanbear Challenge</h2>
-    <p class="missions-subtitle">Ayo Sanbear's!! Coba selesaikan tantangan hari ini dan kumpulkan poin sanbears untuk ditukarkan hadiah spesial 🌱</p>
-
-    <div class="missions-grid">
-
-      <div class="mission-card">
-        <div class="mission-icon">
-          <i class="fa-solid fa-bolt"></i>
-        </div>
-        <div class="mission-info">
-          <h4>Kurangi Pemakaian Listrik</h4>
+      <!-- Mission 1 -->
+      <div class="mission-card-simple">
+        <div class="mission-info-simple">
+          <h3>Kurangi Pemakaian Listrik</h3>
           <p>Matikan lampu dan alat elektronik yang tidak dipakai</p>
-          <span class="mission-points">+100 poin</span>
+          <span class="mission-points-simple">+100 poin</span>
         </div>
-        <button class="mission-btn" data-points="100">
-          <i class="fa-solid fa-check"></i> Klaim
+        <button class="mission-btn-final" onclick="claimMission(100, this)">
+          Klaim
         </button>
       </div>
 
-      <div class="mission-card">
-        <div class="mission-icon">
-          <i class="fa-solid fa-bottle-water"></i>
-        </div>
-        <div class="mission-info">
-          <h4>Gunakan Botol Minum</h4>
+      <!-- Mission 2 -->
+      <div class="mission-card-simple">
+        <div class="mission-info-simple">
+          <h3>Gunakan Botol Minum</h3>
           <p>Bawa botol minum sendiri sepanjang hari</p>
-          <span class="mission-points">+100 poin</span>
+          <span class="mission-points-simple">+100 poin</span>
         </div>
-        <button class="mission-btn" data-points="100">
-          <i class="fa-solid fa-check"></i> Klaim
+        <button class="mission-btn-final" onclick="claimMission(100, this)">
+          Klaim
         </button>
       </div>
 
-      <div class="mission-card">
-        <div class="mission-icon">
-          <i class="fa-solid fa-seedling"></i>
-        </div>
-        <div class="mission-info">
-          <h4>Rawat Tanaman</h4>
+      <!-- Mission 3 -->
+      <div class="mission-card-simple">
+        <div class="mission-info-simple">
+          <h3>Rawat Tanaman</h3>
           <p>Menyiram atau merawat minimal satu tanaman</p>
-          <span class="mission-points">+100 poin</span>
+          <span class="mission-points-simple">+100 poin</span>
         </div>
-        <button class="mission-btn" data-points="100">
-          <i class="fa-solid fa-check"></i> Klaim
+        <button class="mission-btn-final" onclick="claimMission(100, this)">
+          Klaim
         </button>
       </div>
 
-      <div class="mission-card">
-        <div class="mission-icon">
-          <i class="fa-solid fa-bag-shopping"></i>
-        </div>
-        <div class="mission-info">
-          <h4>Tolak Plastik Sekali Pakai</h4>
+      <!-- Mission 4 -->
+      <div class="mission-card-simple">
+        <div class="mission-info-simple">
+          <h3>Tolak Plastik Sekali Pakai</h3>
           <p>Gunakan tas belanja sendiri hari ini</p>
-          <span class="mission-points">+100 poin</span>
+          <span class="mission-points-simple">+100 poin</span>
         </div>
-        <button class="mission-btn" data-points="100">
-          <i class="fa-solid fa-check"></i> Klaim
+        <button class="mission-btn-final" onclick="claimMission(100, this)">
+          Klaim
         </button>
       </div>
 
-      <div class="mission-card">
-        <div class="mission-icon">
-          <i class="fa-solid fa-utensils"></i>
-        </div>
-        <div class="mission-info">
-          <h4>Bawa Bekal Sendiri</h4>
+      <!-- Mission 5 -->
+      <div class="mission-card-simple">
+        <div class="mission-info-simple">
+          <h3>Bawa Bekal Sendiri</h3>
           <p>Mengurangi sampah kemasan makanan</p>
-          <span class="mission-points">+100 poin</span>
+          <span class="mission-points-simple">+100 poin</span>
         </div>
-        <button class="mission-btn" data-points="100">
-          <i class="fa-solid fa-check"></i> Klaim
+        <button class="mission-btn-final" onclick="claimMission(100, this)">
+          Klaim
         </button>
       </div>
 
-      <div class="mission-card">
-        <div class="mission-icon">
-          <i class="fa-solid fa-person-walking"></i>
-        </div>
-        <div class="mission-info">
-          <h4>Aktivitas Fisik Ringan</h4>
+      <!-- Mission 6 -->
+      <div class="mission-card-simple">
+        <div class="mission-info-simple">
+          <h3>Aktivitas Fisik Ringan</h3>
           <p>Jalan kaki minimal 15 menit</p>
-          <span class="mission-points">+100 poin</span>
+          <span class="mission-points-simple">+100 poin</span>
         </div>
-        <button class="mission-btn" data-points="100">
-  <i class="fa-solid fa-check"></i> <a href=a href="">Klaim</a>
- </button></div>
-        </section>
-        <!-- 🎉 POPUP KLAIM -->
-<div id="claimPopup" style="
-display:none;
-position:fixed;
-top:0; left:0;
-width:100%; height:100%;
-background:rgba(0,0,0,.6);
-z-index:9999;
-justify-content:center;
-align-items:center;">
-  <div style="
-  background:white;
-  padding:30px;
-  border-radius:20px;
-  text-align:center;
-  max-width:400px;
-  box-shadow:0 25px 60px rgba(0,0,0,.35);">
-    <h2>🎉 Selamat Sanbear Changers!</h2>
-    <p>Kamu berhasil menyelesaikan tantangan dan membantu bumi 🌍</p>
-    <button onclick="closePopup()" style="
-      background:#198754;
-      color:white;
-      border:none;
-      padding:10px 20px;
-      border-radius:12px;
-      margin-top:15px;
-      font-weight:600;
-    ">OK</button>
-  </div>
-</div>
-
-
-
+        <button class="mission-btn-final" onclick="claimMission(100, this)">
+          Klaim
+        </button>
       </div>
+    </section>
 
+    <!-- Stats -->
+    <div class="stats-box">
+      <h3 style="color: #1560BD; margin-bottom: 20px;">Progress Hero Sanbear Squad</h3>
+      <div class="stats-content">
+        <div class="stat-item">
+          <div class="stat-value" id="totalMissions">0</div>
+          <div class="stat-label">Misi Diselesaikan</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="totalPoints">0</div>
+          <div class="stat-label">Total Poin</div>
+        </div>
+      </div>
     </div>
 
-    <div class="reset-section">
-  
-
+    <!-- Popup -->
+    <div id="popup" class="popup-overlay">
+      <div class="popup-content">
+        <h3 style="color: #1560BD;">🎉 Berhasil!</h3>
+        <p>Kamu mendapatkan <strong>100 poin</strong>!</p>
+        <p>Leaderboard Sanbear Squad telah diperbarui.</p>
+        <button onclick="closePopup()" 
+                style="background:#3128a7; color:white; border:none; padding:10px 25px; border-radius:8px; font-weight:bold; cursor:pointer; margin-top:15px;">
+          OK
+        </button>
+      </div>
     </div>
-  </div>
-</section>
-<!-- 🏆 LEADERBOARD -->
-<section id="leaderboard" style="padding:100px 0; background:url(assets/img/Gambar\ BG.png)">
-  <div class="container">
-    <h2 style="
-      text-align:center;
-      font-weight:800;
-      font-size:2.4rem;
-      margin-bottom:60px;
-      letter-spacing:.5px;
-    ">
-      🏆 Sanbear Leaderboard
-    </h2>
-
-    <div style="
-      max-width:620px;
-      margin:auto;
-      background:linear-gradient(145deg,#f7fffb,#dcfce7);
-      border-radius:32px;
-      padding:40px 35px;
-      box-shadow:
-        0 30px 60px rgba(0,0,0,.18),
-        inset 0 0 0 1px rgba(255,255,255,.7);
-      position:relative;
-      overflow:hidden;
-    ">
-
-      <!-- glow -->
-      <div style="
-        position:absolute;
-        inset:-50%;
-        background:conic-gradient(from 180deg,#86beef,#22aac5,#4a8dde,#86efac);
-        opacity:.15;
-        filter:blur(80px);
-      "></div>
-
-      <!-- ITEM 1 -->
-      <div style="
-        position:relative;
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        padding:18px 22px;
-        margin-bottom:14px;
-        background:linear-gradient(135deg,#2289c5,#1655a3);
-        border-radius:20px;
-        color:white;
-        font-weight:700;
-        box-shadow:0 15px 30px rgba(34, 116, 197, 0.45);
-      ">
-        <span style="font-size:1.05rem;">🥇 Green Alpha</span>
-        <span style="font-size:1.1rem;">Rp 120.000</span>
-      </div>
-
-      <!-- ITEM 2 -->
-      <div style="
-        position:relative;
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        padding:17px 22px;
-        margin-bottom:14px;
-        background:linear-gradient(135deg,#bbf7f5,#2b7a83);
-        border-radius:18px;
-        font-weight:700;
-        box-shadow:0 10px 22px rgba(0,0,0,.12);
-      ">
-        <span>🥈 Eco Warriors</span>
-        <span>Rp 90.000</span>
-      </div>
-
-      <!-- ITEM 3 -->
-      <div style="
-        position:relative;
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        padding:17px 22px;
-        background:linear-gradient(135deg,#ecfdf5,#a7f3d0);
-        border-radius:18px;
-        font-weight:700;
-        box-shadow:0 8px 18px rgba(0,0,0,.1);
-      ">
-        <span>🥉 Sanbear Squad</span>
-        <span>Rp 60.000</span>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-</div>
-</section>
-<!-- ✅ JS -->
-<script>
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-let particles = [];
-for(let i=0; i<50; i++){
-  particles.push({x: Math.random()*canvas.width, y: Math.random()*canvas.height, r: Math.random()*3+1, dx:(Math.random()-0.5)*1, dy:(Math.random()-0.5)*1});
-}
-function draw(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  ctx.fillStyle = "#00ff99";
-  particles.forEach(p=>{
-    ctx.beginPath();
-    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fill();
-    p.x+=p.dx; p.y+=p.dy;
-    if(p.x<0||p.x>canvas.width) p.dx*=-1;
-    if(p.y<0||p.y>canvas.height) p.dy*=-1;
-  });
-  requestAnimationFrame(draw);
-}
-draw();
-window.addEventListener("resize",()=>{
-  canvas.width=window.innerWidth;
-  canvas.height=window.innerHeight;
-});
-</script>
-
-<!-- ✅ Thank You Message -->
-<script>
-  document.getElementById('contact-form').addEventListener('submit', function(e) {
-    setTimeout(function() {
-      document.getElementById("thankYouMessage").style.display = "block";
-    }, 500);
-  });
-</script>
-
 
   </main>
+
+  <section id="leaderboard" style="padding:100px 0; background:url(assets/img/Gambar\ BG.png); margin-top: 50px;">
+    <div class="container">
+      <h2 style="
+        text-align:center;
+        font-weight:800;
+        font-size:2.4rem;
+        margin-bottom:60px;
+        letter-spacing:.5px;
+        color: #1560BD;
+      ">
+        🏆 Sanbear Leaderboard
+      </h2>
+
+      <div style="
+        max-width:620px;
+        margin:auto;
+        background:linear-gradient(145deg,#f7fffb,#dcfce7);
+        border-radius:32px;
+        padding:40px 35px;
+        box-shadow:
+          0 30px 60px rgba(0,0,0,.18),
+          inset 0 0 0 1px rgba(255,255,255,.7);
+        position:relative;
+        overflow:hidden;
+      ">
+
+        <!-- glow -->
+        <div style="
+          position:absolute;
+          inset:-50%;
+          background:conic-gradient(from 180deg,#86beef,#22aac5,#4a8dde,#86efac);
+          opacity:.15;
+          filter:blur(80px);
+        "></div>
+
+        <div style="
+          position:relative;
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+          padding:18px 22px;
+          margin-bottom:14px;
+          background:linear-gradient(135deg,#2289c5,#1655a3);
+          border-radius:20px;
+          color:white;
+          font-weight:700;
+          box-shadow:0 15px 30px rgba(34, 116, 197, 0.45);
+        ">
+          <span style="font-size:1.05rem;">🥇 Sanbear Squad (You)</span>
+          <span style="font-size:1.1rem;" id="leaderboardPoints">Rp 120.000</span>
+        </div>
+
+        <div style="
+          position:relative;
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+          padding:17px 22px;
+          margin-bottom:14px;
+          background:linear-gradient(135deg,#bbf7f5,#2b7a83);
+          border-radius:18px;
+          font-weight:700;
+          box-shadow:0 10px 22px rgba(0,0,0,.12);
+        ">
+          <span>🥈 Eco Warriors</span>
+          <span>Rp 90.000</span>
+        </div>
+
+        <div style="
+          position:relative;
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+          padding:17px 22px;
+          background:linear-gradient(135deg,#ecfdf5,#a7f3d0);
+          border-radius:18px;
+          font-weight:700;
+          box-shadow:0 8px 18px rgba(0,0,0,.1);
+        ">
+          <span>🥉 Green Alpha </span>
+          <span>Rp 60.000</span>
+        </div>
+
+        <div style="text-align: center; margin-top: 25px; color: #666; font-size: 0.9rem;">
+          <i class="fas fa-info-circle"></i> Setiap misi menambah <strong>100 poin</strong> ke akun anda (Sanbear Squad)
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #f8f9fa; padding: 40px 0; margin-top: 50px; text-align: center;">
+    <div class="container">
+      <p>© Copyright <strong>Sanbear Change</strong> All Rights Reserved</p>
+      <p>Designed by The Sanbear Team</p>
+    </div>
+  </footer>
+
+  <!-- javascript -->
+  <script>
+    // Data awal
+    let leaderboardPoints = 120000;
+    let missionsCompleted = 0;
+    let totalPoints = 0;
+    
+    // Fungsi klaim misi
+    function claimMission(points, button) {
+      console.log("🎯 Tombol diklik!");
+      
+      // Cek apakah sudah diklaim
+      if (button.classList.contains('claimed')) {
+        console.log("Sudah diklaim");
+        return;
+      }
+      
+      // Update data
+      leaderboardPoints += points;
+      missionsCompleted += 1;
+      totalPoints += points;
+      
+      // Update tampilan
+      document.getElementById('leaderboardPoints').textContent = 'Rp ' + leaderboardPoints.toLocaleString('id-ID');
+      document.getElementById('totalMissions').textContent = missionsCompleted;
+      document.getElementById('totalPoints').textContent = totalPoints;
+      
+      // Ubah tombol
+      button.classList.add('claimed');
+      button.textContent = '✓ Selesai';
+      button.style.background = '#6c757d';
+      button.style.cursor = 'not-allowed';
+      
+      // Tampilkan popup
+      document.getElementById('popup').style.display = 'flex';
+      
+      console.log("✅ Berhasil! Leaderboard: Rp " + leaderboardPoints);
+    }
+    
+    // Fungsi tutup popup
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+    
+    
+    //eventlistener
+    document.getElementById('popup').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closePopup();
+      }
+    });
+    
+
+    window.addEventListener('load', function() {
+      console.log("🚀 Sanbear Challenge Siap!");
+      console.log("Klik tombol Klaim untuk mulai!");
+      
+      //leaderboard keupdate
+      document.getElementById('leaderboardPoints').textContent = 'Rp ' + leaderboardPoints.toLocaleString('id-ID');
+    });
+  </script>
+
 
   <footer id="footer" class="footer light-background">
 
