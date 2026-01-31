@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+      <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+ <!-- Favicons -->
+  <link href="logo kita.png" rel="icon" class="logo-icon">
+  <link href="logo kita.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" />
+</head>
+
+<body>
+        <!-- quiz configuration container -->
+        <div class="config-container">
+        <h2 class="config-title">Quiz</h2>
+
+        <div class="config-option">
+            <h4 class="option-title">Select Level</h4>
+            <div class="category-options">
+                <button class="category-option active">Level 1🌳</button>
+                <button class="category-option">Level 2🌎</button>
+                <button class="category-option">Level 3💧</button>
+                <button class="category-option">Level 4‼️</button>
+            </div>
+        </div>
+
+        <div class="config-option">
+            <h4 class="option-title">No. of questions</h4>
+            <div class="question-options">
+                <button class="question-option">5</button>
+                <button class="question-option active">10</button>
+            </div>
+        </div>
+
+        <button class="start-quiz-button">Start Here!</button>
+    </div>
+    <!-- quiz container  -->
+    <div class="quiz-container">
+        <header class="quiz-header">
+            <h2 class="quiz-title">Test Your Knowledge</h2>
+            <div class="quiz-timer">
+                <span class="material-symbols-outlined">
+                    timer
+                </span>
+                <p class="time-duration">15s</p>
+            </div>
+        </header>
+
+        <div class="quiz-content">
+<h1 class="question-text">What is climate change?</h1>            <ul class="answer-options">
+                <li class="answer-option incorrect">Daily weather changes <span class="material-symbols-outlined">
+cancel
+</span></li>
+<li class="answer-option correct">Long-term changes in Earth's climate patterns <span class="material-symbols-outlined">
+check_circle
+</span></li>
+<li class="answer-option">Momentary extreme temperature changes</li>
+<li class="answer-option">Seasonal changes</li>
+            </ul>
+        </div>
+
+        <div class="quiz-footer">
+            <p class="question-status"><b>1</b> of <b>5</b> questions</p>
+            <button class="next-question-btn">Next
+                <span class="material-symbols-outlined">
+                    arrow_right_alt
+                </span>
+            </button>
+        </div>
+    </div>
+    <!-- quiz result container -->
+     <div class="result-container">
+        <img src="celebration.webp" class="result-img">
+        <h2 class="result-title">You've finished the quiz!</h2>
+        <p class="result-message"></p>
+        <button class="try-again-btn">Try Again</button>
+     </div>
+     <script src="javascript/questions.js"></script>
+     <script src="javascript/script.js"></script>
+</body>
+
+</html>
