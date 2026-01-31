@@ -81,7 +81,7 @@ const handleAnswer = (option, answerIndex) => {
     const isCorrect = currentQuestion.correctAnswer === answerIndex;
     option.classList.add(isCorrect? 'correct':'incorrect');
 
-    !isCorrect ? highlightCorrectAnswer():correctAnswerCount++;
+    !isCorrect ? highlightCorrectAnswer():correctAnswerCount++; //nambahin skor 1 tiap 1 bener
 
     // abis satu pertanyaan, soal acak baru, reset timer
     const iconHTML = `<span class = "material-symbols-outlined">${isCorrect? 'check_circle' : 'cancel'}</span>`;
@@ -142,7 +142,7 @@ document.querySelectorAll(".category-option,.question-option").forEach(option =>
 
 
 const resetQuiz = () => {
-    correctAnswerCount = 0;
+    correctAnswerCount = 0; //reset poin jadi 1
     questionIndexHistory.length = 0;
     resultContainer.style.display = "none";
     configContainer.style.display = "block";
