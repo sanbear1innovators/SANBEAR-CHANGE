@@ -37,6 +37,31 @@
     });
   });
 
+  // Pastikan jQuery sudah terload atau gunakan vanilla JS
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const navmenu = document.getElementById('navmenu');
+  
+  if (mobileNavToggle && navmenu) {
+    mobileNavToggle.addEventListener('click', function() {
+      navmenu.classList.toggle('active');
+      this.classList.toggle('bi-list');
+      this.classList.toggle('bi-x');
+    });
+    
+    // Close menu when clicking on links
+    const navLinks = document.querySelectorAll('.navmenu a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        if (window.innerWidth <= 1199) {
+          navmenu.classList.remove('active');
+          mobileNavToggle.classList.remove('bi-x');
+          mobileNavToggle.classList.add('bi-list');
+        }
+      });
+    });
+  }
+});
   function showPopup() {
     document.getElementById("popupMessage").style.display = "block";
     document.getElementById("popupBackdrop").style.display = "block";
