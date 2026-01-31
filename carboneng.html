@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Climate Quiz ft True or False</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('assets/img/nye.png') no-repeat center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(3px);
+    }
+
+    .quiz-box {
+      width: 90%;
+      max-width: 500px;
+      background: rgba(255,255,255,0.85);
+      border-radius: 20px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      animation: fadeIn 0.6s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      font-weight: 600;
+      font-size: 22px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      background: #4ecf72;
+      border: 0;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn:hover { background: #35b75a; }
+
+    .false { background: #ff6f6f; }
+    .false:hover { background: #e05353; }
+
+    #result {
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 15px;
+      min-height: 25px;
+    }
+
+    #score {
+      margin-top: 15px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="quiz-box">
+    <h2 id="question">Loading...</h2>
+    <button class="btn" onclick="answer(true)">TRUE</button>
+    <button class="btn false" onclick="answer(false)">FALSE</button>
+    <div id="result"></div>
+    <div id="score"></div>
+  </div>
+
+  <!-- SOUND EFFECTS -->
+  <audio id="correctSound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_7ac9e4f5e1.mp3"></audio>
+  <audio id="wrongSound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_42dea3f6d4.mp3"></audio>
+
+  <script>
+    const questions = [
+      { q: "70% of the Earth's oxygen comes from the ocean.", a: true },
+      { q: "Climate change is mainly caused by volcanic eruptions.", a: false },
+      { q: "Recycling one aluminum can saves enough energy to power a TV for 3 hours.", a: true },
+      { q: "Fast fashion has no impact on climate change.", a: false },
+      { q: "Using a bike instead of a car reduces CO₂ emissions.", a: true },
+      { q: "The Earth has warmed about 1.1°C since the late 1800s.", a: true },
+      { q: "Trees absorb carbon dioxide.", a: true },
+      { q: "Plastic takes only 10 years to decompose.", a: false },
+      { q: "Renewable energy reduces greenhouse gases.", a: true },
+      { q: "Food waste has no effect on climate change.", a: false }
+    ];
+
+    let index = 0;
+    let score = 0;
+
+    const qText = document.getElementById("question");
+    const result = document.getElementById("result");
+    const scoreBox = document.getElementById("score");
+
+    function loadQuestion() {
+      qText.innerText = questions[index].q;
+      result.innerText = "";
+    }
+
+    function answer(choice) {
+      const correct = questions[index].a;
+
+      if (choice === correct) {
+        score++;
+        result.innerHTML = "<span style='color:green'>Correct! 🌱✨</span>";
+        document.getElementById("correctSound").play();
+      } else {
+        result.innerHTML = "<span style='color:red'>Wrong! 😢</span>";
+        document.getElementById("wrongSound").play();
+      }
+
+      index++;
+
+      if (index < questions.length) {
+        setTimeout(loadQuestion, 900);
+      } else {
+        setTimeout(() => {
+          qText.innerText = "Quiz Selesai!";
+          result.innerHTML = "";
+          scoreBox.innerHTML = `Skor Kamu: <strong>${score}/${questions.length}</strong>`;
+        }, 800);
+      }
+    }
+
+    loadQuestion();
+  </script>
+
+</body>
+</html>
