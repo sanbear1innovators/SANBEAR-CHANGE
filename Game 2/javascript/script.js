@@ -1,3 +1,4 @@
+//variables declaration 
 const configContainer = document.querySelector(".config-container");
 const quizContainer = document.querySelector(".quiz-container");
 const answerOptions = document.querySelector(".answer-options");
@@ -6,13 +7,13 @@ const resultContainer = document.querySelector(".result-container");
 const timerDisplay = document.querySelector(".time-duration");
 
 let currentQuestion = null;
-let quizCategory = 'geography';
-const QUIZ_TIME_LIMIT = 15;
+let quizCategory = 'Level 1🌳';
+const QUIZ_TIME_LIMIT = 15; //waktu buat game
 let currentTime = QUIZ_TIME_LIMIT;
-let timer = null;
+let timer = null; //timer bikin start 0
 const questionIndexHistory = [];
 let numberOfQuestions = 5;
-let correctAnswerCount = 0;
+let correctAnswerCount = 0; //jawaban smua 0 dl trus diitung sesuai progres
 
 // display the quiz result and hide the quiz container
 
@@ -21,17 +22,17 @@ const showQuizResult = () => {
     resultContainer.style.display = "block";
 
     const resultText = `You answered <b>${correctAnswerCount}<b/> out of <b>${numberOfQuestions}</b> questions correctly. Amazing work!`;
-    document.querySelector(".result-message").innerHTML = resultText;
+    document.querySelector(".result-message").innerHTML = resultText; //yg bagian akhir buat nunjukin berapa pertanyaan bnr dari brp
 }
 
-// clear and reset the timer
+// reset timer
 const resetTimer =() => {
     clearInterval(timer);
     currentTime = QUIZ_TIME_LIMIT;
     timerDisplay.textContent = `${currentTime}`;
 }
 
-// initialize and start the timer for the current question
+// mulai lg timer 15 detik
 const startTimer = () => {
     timer = setInterval(()=> {
         currentTime--;
@@ -42,24 +43,24 @@ const startTimer = () => {
             highlightCorrectAnswer();
             document.querySelector(".next-question-btn").style.visibility = "visible";
             quizContainer.querySelector(".quiz-timer").style.background = "#c31402";
-            // disable all anser options after one option is selected
+            // opsi lain gabisa diklik lg
             answerOptions.querySelectorAll(".answer-option").forEach(option => option.style.pointerEvents = "none");
         }
     },1000)
 }
 
-// fetch a random question from based on the selected category
+// dari list pertanyaan yang ada, urutan kuis bisa berubah sesuai random
 
 const getRandomQuestion = () => {
     const categoryQuestions = questions.find(cat => cat.category.toLowerCase() === quizCategory.toLowerCase()).questions || [];
     console.log(categoryQuestions);
 
-    //show the results if all questions have been used
+    //kl smua udh, langsung hasil
     if(questionIndexHistory.length >= numberOfQuestions){
         return showQuizResult();
     }
 
-    // filter out the already asked questions and choose a random one
+    // pertanyaan udah gaakan muncul lagi
     const availableQuestions = categoryQuestions.filter((_, index) => !questionIndexHistory.includes(index));
     const randomQuestion = availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
     questionIndexHistory.push(categoryQuestions.indexOf(randomQuestion));
@@ -67,7 +68,7 @@ const getRandomQuestion = () => {
     return randomQuestion;
 }
 
-// handle the correct answer option and add icon
+// nandain jawaban bener
 const highlightCorrectAnswer = () => {
     const correctOption = answerOptions.querySelectorAll(".answer-option")[currentQuestion.correctAnswer];
     correctOption.classList.add("correct");
@@ -75,18 +76,18 @@ const highlightCorrectAnswer = () => {
     correctOption.insertAdjacentHTML("beforeend", iconHTML);
 }
 
-// handle the user answer selection
+// cek bener/salah, ngejalanin CSS sesuai bener ato salah itu
 const handleAnswer = (option, answerIndex) => {
     const isCorrect = currentQuestion.correctAnswer === answerIndex;
     option.classList.add(isCorrect? 'correct':'incorrect');
 
     !isCorrect ? highlightCorrectAnswer():correctAnswerCount++;
 
-    // insert icon based on correctness
+    // abis satu pertanyaan, soal acak baru, reset timer
     const iconHTML = `<span class = "material-symbols-outlined">${isCorrect? 'check_circle' : 'cancel'}</span>`;
     option.insertAdjacentHTML("beforeend", iconHTML);
 
-    // disable all answer options after one option is selected
+    
     answerOptions.querySelectorAll(".answer-option").forEach(option => option.style.pointerEvents = "none");
 
     document.querySelector(".next-question-btn").style.visibility = "visible";
@@ -117,7 +118,7 @@ const renderQuestion = () => {
 
 }
 
-// start the quiz and render the question
+// jalanin kuis sesuai pilihan jumlah pertanyaan dan randomize pertanyaan pertama
 const startQuiz = () => {
     configContainer.style.display = "none";
     quizContainer.style.display = "block";
@@ -129,7 +130,7 @@ const startQuiz = () => {
     renderQuestion();
 }
 
-// highlight the selected option on click category or no of questions
+
 document.querySelectorAll(".category-option,.question-option").forEach(option => {
     option.addEventListener("click", ()=> {
         option.parentNode.querySelector(".active").classList.remove("active");
@@ -137,7 +138,8 @@ document.querySelectorAll(".category-option,.question-option").forEach(option =>
     })
 })
 
-// reset the quiz and return to the configuration container
+// reset kuis
+
 
 const resetQuiz = () => {
     correctAnswerCount = 0;
